@@ -8,9 +8,20 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "EditorScript",
+"class": "Comment",
+"language": "GDScript",
+"path": "res://Scripts/Comment.gd"
+} ]
+_global_script_class_icons={
+"Comment": ""
+}
+
 [application]
 
 config/name="VideoGameBusinessPlan"
+run/main_scene="res://Scenes/Main Scene.tscn"
 config/icon="res://icon.png"
 
 [gui]

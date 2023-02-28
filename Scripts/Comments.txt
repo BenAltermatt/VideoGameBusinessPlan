@@ -1,5 +1,9 @@
 (10, 10, 20) "This is the comment that I want to be able to read" {
-  - "This is one potential response comment " (10, -10)
-  - "This is one additional potential response comment " (0, 11)
-  - "This is a third addtional potential response" (-20, 200)
-} 
+  - User : "Jimby Jones"
+  - Pfp : "heheha.jpg"
+  - Cmt: "This is one potential response comment " (10, -10)
+  - Cmt: "This is one additional potential response comment " (0, 11)
+  - Cmt: "This is a third addtional potential response" (-20, 200)
+};
+
+
