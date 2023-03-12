@@ -1,5 +1,29 @@
-(10, 10, 20) "This is the comment that I want to be able to read" {
-  - "This is one potential response comment " (10, -10)
-  - "This is one additional potential response comment " (0, 11)
-  - "This is a third addtional potential response" (-20, 200)
-} 
+(10, 10, 20) "This is the comment that I want to be able to read" 
+  - User : "Jimby Jones"
+  - Pfp : "heheha.jpg"
+  - Cmt: "This is one potential response comment " (10, -10)
+  - Cmt: "This is one additional potential response comment " (0, 11)
+  - Cmt: "This is a third addtional potential response" (-20, 200)
+;
+(10, 20, -10) "Second Comment? More like, second... content?" 
+  - User : "Ass Clown"
+  - Pfp : "horrors.jpg"
+  - Cmt: "Blocked. " (10, -10)
+  - Cmt: "Reported " (0, 11)
+  - Cmt: "Please leave my family alone" (-20, 200)
+;
+(-10, 10, 20) "Are you some kinda fascist?" 
+  - User : "Fascist Hunter 123"
+  - Pfp : "Stallin.png"
+  - Cmt: "Who are you? " (1, 0)
+  - Cmt: "I hate fascism " (0, 11)
+  - Cmt: "Oh my god are you Stalin?" (-20, 200)
+;
+(10, 10, 20) "Come outside" 
+  - User : "Swarm of bees"
+  - Pfp : "bee_swarm.gif"
+  - Cmt: "Please dont hurt me " (10, -10)
+  - Cmt: "Never have, never will " (0, 11)
+  - Cmt: "George Bush doesn't care about bloack people" (-20, 200)
+;
+
