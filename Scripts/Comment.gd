@@ -3,14 +3,17 @@
 
 # This class represents a single comment that can be displayed
 # within the game
-extends EditorScript
+
 # These are all the things we can get out of a single 
 # comment in a game
+
+const PROFILE_PIC_PATH = "res://ProfilePics/"
 
 class_name Comment
 
 var user : String = "NO_NAME"
-var pfp : String = "NO_FILE"
+var pfp : ImageTexture = ImageTexture.new()
+var pfp_str : String = "default.png"
 var text : String = "NO_TEXT"
 var good_thresh : int = 0
 var end_a_thresh : int = 0
@@ -21,6 +24,8 @@ var responses = []
 # I want to be able to parse a comment out of a string from a file
 func _init(block=null):
 	assert(block !=  null, "Need a block to make a comment. Got null.")
+	pfp = _load_texture(pfp_str)
+	
 	var lines = block.split('\n')
 	
 	# we are going to handle the top line first as it includes most of our info
@@ -103,18 +108,32 @@ func _read_user(content:String):
 func _read_pfp(content:String):
 	var start = content.find("\"")
 	var end = content.rfind("\"")
-	pfp = content.substr(start + 1, end - start - 1)
+	pfp_str = content.substr(start + 1, end - start - 1)
+	pfp = _load_texture(pfp_str)
 
 func print_comment():
 	print("(good_thresh, end_a_thresh, time_thresh) are (%d, %d, %d)" % [good_thresh, end_a_thresh, time_thresh])
 	print("Comment: %s" % text)
 	print("Username: %s" % user)
-	print("Pfp file: %s" % pfp)
+	print("Pfp file: %s" % pfp_str)
 	for resp in responses:
 		print("Response:")
 		print("\t%s" % resp.text)
 		print("\t(good_change, end_a_change): (%d, %d)" % [resp.good_change, resp.end_a_change])
 
+func _load_texture(filename : String) -> ImageTexture:
+	var retImg : ImageTexture = ImageTexture.new()
+	var img : Image = Image.new()
+	
+	var err = img.load(PROFILE_PIC_PATH + filename)
+	if err != OK:
+		assert(false, "Failed to load in a profile pic asset. Filename %s" % filename)
+		return retImg
+	
+	retImg.create_from_image(img)
+	return retImg
+	
+	
 class Response:
 	var text = "EMPTY_RESPONSE"
 	var good_change = 0
