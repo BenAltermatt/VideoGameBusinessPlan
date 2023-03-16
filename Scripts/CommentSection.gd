@@ -5,7 +5,7 @@
 extends Node
 
 var COMMENT_OBJECT_PATH = "res://Scripts/Comment.gd"
-var COMMENT_READER_PATH = "res://Scripts/ReadComments.gd"
+var COMMENT_READER_PATH = "res://Scripts/ReadObjects.gd"
 var VISUAL_COMMENT_PATH = "res://Scenes/Single Comment.tscn"
 
 var read_coms = load(COMMENT_READER_PATH)
@@ -14,7 +14,7 @@ var SingleComment = load(VISUAL_COMMENT_PATH)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# read in the comments (this is a temporary setup)	
-	var comments = read_coms.read_in()
+	var comments = read_coms.read_in_comments()
 	var container = get_node("ScrollContainer/VBoxContainer")
 	
 	for comment in comments:
