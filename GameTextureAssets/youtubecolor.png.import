@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/youtubetopbar.png-3981f853e608cd052052090d2443084f.stex"
+path="res://.import/youtubecolor.png-c805ffa0b2a12e994436c9e6f4fc5fa0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://youtubetopbar.png"
-dest_files=[ "res://.import/youtubetopbar.png-3981f853e608cd052052090d2443084f.stex" ]
+source_file="res://GameTextureAssets/youtubecolor.png"
+dest_files=[ "res://.import/youtubecolor.png-c805ffa0b2a12e994436c9e6f4fc5fa0.stex" ]
 
 [params]
 
