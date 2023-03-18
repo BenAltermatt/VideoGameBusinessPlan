@@ -4,21 +4,24 @@
 [ext_resource path="res://Scripts/CommentBlock.gd" type="Script" id=2]
 [ext_resource path="res://icons/Reply.png" type="Texture" id=3]
 
-[node name="Single Comment" type="Control"]
+[node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 0.208
-margin_bottom = 0.199997
+margin_bottom = -0.800003
+rect_min_size = Vector2( 0, 124 )
 script = ExtResource( 2 )
 
-[node name="Visual Comment" type="Panel" parent="."]
-margin_right = 1024.0
-margin_bottom = 125.0
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
 
-[node name="Pfp" type="TextureRect" parent="Visual Comment"]
+[node name="Pfp" type="TextureRect" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_left = 21.0
 margin_top = 38.0
-margin_right = 94.0
-margin_bottom = 114.0
+margin_right = -930.0
+margin_bottom = -10.0
 texture = ExtResource( 1 )
 expand = true
 stretch_mode = 1
@@ -26,31 +29,36 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Username" type="RichTextLabel" parent="Visual Comment"]
+[node name="Username" type="RichTextLabel" parent="Panel"]
+anchor_bottom = 1.0
 margin_left = 20.0
 margin_top = 9.0
 margin_right = 166.0
-margin_bottom = 29.0
+margin_bottom = -94.0
+rect_min_size = Vector2( 0, 21 )
 text = "Default Username"
 __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Comment Content" type="RichTextLabel" parent="Visual Comment"]
-margin_left = 119.0
-margin_top = 37.0
-margin_right = 1011.0
-margin_bottom = 111.0
-text = "Hey hey hey what it be, what it do? I am going to kill you :3"
-
-[node name="TextureButton" type="TextureButton" parent="Visual Comment"]
-anchor_left = 1.0
+[node name="Comment Content" type="RichTextLabel" parent="Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -55.0
-margin_top = 42.0
-margin_right = -17.0
-margin_bottom = -44.0
+margin_left = 119.0
+margin_top = 37.0
+margin_right = -82.0
+margin_bottom = -13.0
+rect_min_size = Vector2( 0, 74 )
+text = "Hey hey hey what it be, what it do? I am going to kill you :3"
+
+[node name="TextureButton" type="TextureButton" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 952.0
+margin_top = 21.0
+margin_right = -9.0
+margin_bottom = -28.0
 texture_normal = ExtResource( 3 )
 expand = true
-stretch_mode = 5
+
+[connection signal="pressed" from="Panel/TextureButton" to="." method="_on_TextureButton_pressed"]
