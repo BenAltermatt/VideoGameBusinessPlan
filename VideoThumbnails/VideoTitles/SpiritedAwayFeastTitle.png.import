@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/HomeMenuButton.png-4cdb349795b8cd5f056b4bf9e741ef40.stex"
+path="res://.import/SpiritedAwayFeastTitle.png-f279084471a8db67d7b13f2096c4e09f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://HomeMenuButton.png"
-dest_files=[ "res://.import/HomeMenuButton.png-4cdb349795b8cd5f056b4bf9e741ef40.stex" ]
+source_file="res://VideoThumbnails/VideoTitles/SpiritedAwayFeastTitle.png"
+dest_files=[ "res://.import/SpiritedAwayFeastTitle.png-f279084471a8db67d7b13f2096c4e09f.stex" ]
 
 [params]
 
