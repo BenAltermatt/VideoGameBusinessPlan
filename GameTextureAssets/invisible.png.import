@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/youtubewatch.png-fb8397553a5ff7ed439eea0b15cf21ec.stex"
+path="res://.import/invisible.png-3db56b97609506a71c52a054141bb145.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://youtubewatch.png"
-dest_files=[ "res://.import/youtubewatch.png-fb8397553a5ff7ed439eea0b15cf21ec.stex" ]
+source_file="res://GameTextureAssets/invisible.png"
+dest_files=[ "res://.import/invisible.png-3db56b97609506a71c52a054141bb145.stex" ]
 
 [params]
 

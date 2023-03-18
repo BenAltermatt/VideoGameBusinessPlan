@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/invisible.png-656d0c100c416949a568351c6012ebc5.stex"
+path="res://.import/icon.png-e0ec7f5327379285f4c4b00033ffb276.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://invisible.png"
-dest_files=[ "res://.import/invisible.png-656d0c100c416949a568351c6012ebc5.stex" ]
+source_file="res://GameTextureAssets/icon.png"
+dest_files=[ "res://.import/icon.png-e0ec7f5327379285f4c4b00033ffb276.stex" ]
 
 [params]
 

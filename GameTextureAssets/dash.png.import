@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dash.png-eca2d4067fc9c7b32cc7d883205f3363.stex"
+path="res://.import/dash.png-838103ed432f57998f5552cc12bdd696.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dash.png"
-dest_files=[ "res://.import/dash.png-eca2d4067fc9c7b32cc7d883205f3363.stex" ]
+source_file="res://GameTextureAssets/dash.png"
+dest_files=[ "res://.import/dash.png-838103ed432f57998f5552cc12bdd696.stex" ]
 
 [params]
 

@@ -15,12 +15,18 @@ _global_script_classes=[ {
 "path": "res://Scripts/Comment.gd"
 }, {
 "base": "Reference",
+"class": "TempVideo",
+"language": "GDScript",
+"path": "res://Scripts/TempVideo.gd"
+}, {
+"base": "Reference",
 "class": "YTVideo",
 "language": "GDScript",
 "path": "res://Scripts/Video.gd"
 } ]
 _global_script_class_icons={
 "Comment": "",
+"TempVideo": "",
 "YTVideo": ""
 }
 
