@@ -1,0 +1,101 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/UploadManager.gd" type="Script" id=2]
+
+[node name="Root" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 75.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+margin_right = 100.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 100, 75 )
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/MarginContainer2"]
+margin_top = 30.0
+margin_right = 100.0
+margin_bottom = 44.0
+text = "Upload videos"
+align = 1
+valign = 1
+
+[node name="Gap" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+margin_left = 104.0
+margin_right = 945.0
+margin_bottom = 75.0
+size_flags_horizontal = 3
+
+[node name="CloseButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 949.0
+margin_right = 1024.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 75, 75 )
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/CloseButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "X"
+align = 1
+valign = 1
+clip_text = true
+
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+margin_top = 79.0
+margin_right = 1024.0
+margin_bottom = 442.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_right = -10.0
+custom_constants/hseparation = 10
+columns = 14
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+margin_top = 446.0
+margin_right = 1024.0
+margin_bottom = 496.0
+rect_min_size = Vector2( 0, 50 )
+custom_constants/margin_right = 350
+custom_constants/margin_left = 350
+
+[node name="UploadButton" type="Button" parent="VBoxContainer/MarginContainer"]
+margin_left = 350.0
+margin_right = 674.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/UploadButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Upload"
+align = 1
+valign = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_top = 500.0
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 0, 100 )
+text = "By submitting your videos to YouTube, you acknowledge that you agree to YouTube's Terms of Service and Community Guidelines.
+
+Please be sure not to violate others' copyright or privacy rights. Learn more "
+align = 1
+valign = 1
