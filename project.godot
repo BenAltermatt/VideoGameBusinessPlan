@@ -9,13 +9,25 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "EditorScript",
+"base": "Reference",
 "class": "Comment",
 "language": "GDScript",
 "path": "res://Scripts/Comment.gd"
+}, {
+"base": "Reference",
+"class": "TempVideo",
+"language": "GDScript",
+"path": "res://Scripts/TempVideo.gd"
+}, {
+"base": "Reference",
+"class": "YTVideo",
+"language": "GDScript",
+"path": "res://Scripts/Video.gd"
 } ]
 _global_script_class_icons={
-"Comment": ""
+"Comment": "",
+"TempVideo": "",
+"YTVideo": ""
 }
 
 [application]
