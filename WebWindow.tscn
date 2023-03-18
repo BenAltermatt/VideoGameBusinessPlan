@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://dash.png" type="Texture" id=1]
-[ext_resource path="res://WebWindow.gd" type="Script" id=2]
+[ext_resource path="res://GameTextureAssets/dash.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/WebWindow.gd" type="Script" id=2]
 [ext_resource path="res://icons/power-button-icon.png" type="Texture" id=3]
-[ext_resource path="res://youtubewatch.png" type="Texture" id=4]
+[ext_resource path="res://GameTextureAssets/youtubewatch.png" type="Texture" id=4]
 
 [node name="Window" type="Control"]
 anchor_right = 1.0
