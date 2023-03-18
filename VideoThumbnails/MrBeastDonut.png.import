@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SubsMenuButton.png-988b6a55e092fc2925c2e28d25a6be73.stex"
+path="res://.import/MrBeastDonut.png-647053d6da007edc78385fb26d0ab9da.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SubsMenuButton.png"
-dest_files=[ "res://.import/SubsMenuButton.png-988b6a55e092fc2925c2e28d25a6be73.stex" ]
+source_file="res://VideoThumbnails/MrBeastDonut.png"
+dest_files=[ "res://.import/MrBeastDonut.png-647053d6da007edc78385fb26d0ab9da.stex" ]
 
 [params]
 
