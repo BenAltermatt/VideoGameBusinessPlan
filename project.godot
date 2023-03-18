@@ -9,7 +9,7 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "EditorScript",
+"base": "Reference",
 "class": "Comment",
 "language": "GDScript",
 "path": "res://Scripts/Comment.gd"
@@ -17,22 +17,28 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "TempVideo",
 "language": "GDScript",
-"path": "res://TempVideo.gd"
+"path": "res://Scripts/TempVideo.gd"
+}, {
+"base": "Reference",
+"class": "YTVideo",
+"language": "GDScript",
+"path": "res://Scripts/Video.gd"
 } ]
 _global_script_class_icons={
 "Comment": "",
-"TempVideo": ""
+"TempVideo": "",
+"YTVideo": ""
 }
 
 [application]
 
 config/name="VideoGameBusinessPlan"
-run/main_scene="res://WebWindow.tscn"
+run/main_scene="res://Scenes/WebWindow.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-RecVideos="*res://RecVideos.gd"
+RecVideos="*res://Scripts/RecVideos.gd"
 
 [gui]
 

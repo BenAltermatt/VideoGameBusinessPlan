@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/youtubewatch.png-fb8397553a5ff7ed439eea0b15cf21ec.stex"
+path="res://.import/Reply.png-d9e63165a374e1d54b1ab36223816d40.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://youtubewatch.png"
-dest_files=[ "res://.import/youtubewatch.png-fb8397553a5ff7ed439eea0b15cf21ec.stex" ]
+source_file="res://icons/Reply.png"
+dest_files=[ "res://.import/Reply.png-d9e63165a374e1d54b1ab36223816d40.stex" ]
 
 [params]
 
