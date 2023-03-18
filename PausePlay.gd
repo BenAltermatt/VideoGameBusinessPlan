@@ -14,7 +14,7 @@ func _ready():
 
 
 func _pressed() -> void:
-	print( "video clicked")
+	print( "button clicked")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
