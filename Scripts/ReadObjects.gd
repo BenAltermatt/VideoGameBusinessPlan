@@ -1,6 +1,3 @@
-tool 
-extends EditorScript
-
 # it should be noted that these files cannot have semicolons or newlines within content of comments
 
 const COMMENT_TEXT_PATH = "res://Scripts/Comments.txt"
@@ -38,10 +35,6 @@ static func read_in_videos():
 	for block in blocks:
 		if len(block.strip_edges()) > 0:
 			videos.append(Video.new(block.strip_edges()))
-	
-	for video in videos:
-		video.print_video()
-		print()
 	
 	return videos
 
