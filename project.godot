@@ -33,12 +33,12 @@ _global_script_class_icons={
 [application]
 
 config/name="VideoGameBusinessPlan"
-run/main_scene="res://Scenes/Main Scene.tscn"
+run/main_scene="res://Scenes/WebWindow.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-RecVideos="*res://RecVideos.gd"
+RecVideos="*res://Scripts/RecVideos.gd"
 
 [gui]
 
