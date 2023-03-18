@@ -20,6 +20,7 @@ static func read_in_comments():
 	for block in blocks:
 		if len(block.strip_edges()) > 0:
 			comments.append(Comment.new(block.strip_edges()))
+			
 
 	return comments
 

@@ -6,26 +6,25 @@ extends Node
 # var b = "text"
 const COMMENT_OBJECT_PATH = "res://Scripts/Comment.gd"
 
+signal reply_intent(index)
+
 var Comment = load(COMMENT_OBJECT_PATH)
 
 var myComment
+var index
 
-func init(rend_com):
-	assert(rend_com != null, "A comment needs values to be passed to properly display.")
-	
+func init(rend_com, ind):
 	myComment = rend_com
+	index = ind
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	myComment.print_comment()
-	
-	
 	# we need to find the comment's parts
-	get_node("Visual Comment/Pfp").texture = myComment.load_texture()
-	get_node("Visual Comment/Username").text = myComment.user
-	get_node("Visual Comment/Comment Content").text = myComment.text
+	if (myComment != null):
+		get_node("Panel/Pfp").texture = myComment.load_texture()
+		get_node("Panel/Username").text = myComment.user
+		get_node("Panel/Comment Content").text = myComment.text
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_TextureButton_pressed():
+	emit_signal("reply_intent", index)

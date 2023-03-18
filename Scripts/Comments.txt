@@ -26,6 +26,7 @@
   - Cmt: "Never have, never will " (0, 11)
   - Cmt: "George Bush doesn't care about bloack people" (-20, 200)
 ;
+
 (10, 20, 2) "I actyually think this is historically inaccurate as a lot of the people depicted in this conform more to the popular media representation of them and not a historically accurate image. I would really appreciate if you were to do your research next time. Otherwise, please cite your sources at least!!!"
 - User : "Cooomenter"
 - Pfp : "coooper.jpg"
@@ -33,6 +34,7 @@
 - Cmt : "This came to me in a dream." (-10, 10)
 - Cmt : "Ratio." (100, -100)
 ;
+
 (-30, 15, 12) "She's actually 10,000 years old!!!"
 - User : "Rio M. Young"
 - Pfp : "scary_opinions.png"
