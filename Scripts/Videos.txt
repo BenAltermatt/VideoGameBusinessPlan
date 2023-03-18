@@ -1,0 +1,45 @@
+(110, 20, 11) "I made a robot dog that pisses beer1"
+- User : "Michael Reeves"
+- Desc : "NightmareNightmareNightmareNightmareNightmare"
+- vfile : "big-buck-bunny_trailer.webm"
+- tfile : "icon.png"
+- change : (10, -10)
+;
+
+(110, 20, 11) "I made a robot dog that pisses beer2"
+- User : "Michael Reeves"
+- Desc : "NightmareNightmareNightmareNightmareNightmare"
+- vfile : "testvideo.webm"
+- tfile : "dash.png"
+- change : (10, -10)
+;
+(110, 20, 11) "I made a robot dog that pisses beer3"
+- User : "Michael Reeves"
+- Desc : "NightmareNightmareNightmareNightmareNightmare"
+- vfile : "big-buck-bunny_trailer.webm"
+- tfile : "icon.png"
+- change : (10, -10)
+;
+
+(110, 20, 11) "I made a robot dog that pisses beer4"
+- User : "Michael Reeves"
+- Desc : "NightmareNightmareNightmareNightmareNightmare"
+- vfile : "testvideo.webm"
+- tfile : "dash.png"
+- change : (10, -10)
+;
+(110, 20, 11) "I made a robot dog that pisses beer5"
+- User : "Michael Reeves"
+- Desc : "NightmareNightmareNightmareNightmareNightmare"
+- vfile : "big-buck-bunny_trailer.webm"
+- tfile : "icon.png"
+- change : (10, -10)
+;
+
+(110, 20, 11) "I made a robot dog that pisses beer6"
+- User : "Michael Reeves"
+- Desc : "NightmareNightmareNightmareNightmareNightmare"
+- vfile : "testvideo.webm"
+- tfile : "dash.png"
+- change : (10, -10)
+;
