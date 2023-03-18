@@ -3,22 +3,37 @@ extends Node
 # const vars
 const MAX_DAYS = 7
 const MAX_ACTIONS = 5
+const USERNAME = "player"
 
 # variables that determine what category the next action is in
 enum action {UPLOAD, WATCH, COMMENT}
 
 
 # Threshold values
-var x = 0				# value that affects player getting dark past or crazy fan ending
-var y = 0				# value that affects player getting good or bad ending
-var currDay = 0			# current day in the game, cannot go below 0 or exceeed MAX_DAYS
-var dayEnded = false		# value that changes depending on if a day is completed (player has used all their actions)
-var numActions = 0		# the amount of actions that the player has used
+var x = 0					# value that affects player getting dark past or crazy fan ending
+var y = 0					# value that affects player getting good or bad ending
+var currDay = 0				# current day in the game, cannot go below 0 or exceeed MAX_DAYS
+var dayEnded = false			# value that changes depending on if a day is completed (player has used all their actions)
+var numActions = 0			# the amount of actions that the player has used
 var uploadedVideo = false	# value that determines if the player has uploaded a video (so player can end their day)
-var lockEnding = 0.25	# value that determines how far player must be in the story to lock them to a specific ending
-var lockGoodBad = 0.75	# value that determines how far player must be in the story to lock them to good or bad ending
-var pathLocked = false	# the players path after getting locked
+var lockEnding = 0.25		# value that determines how far player must be in the story to lock them to a specific ending
+var lockGoodBad = 0.75		# value that determines how far player must be in the story to lock them to good or bad ending
+var pathLocked = false		# the players path after getting locked
 var goodBadLocked = false	# the player's path after
+
+# Serving values
+var Comment = load("res://Scripts/Comment.gd")
+var YTVideo = load("res://Scripts/Video.gd")
+var Loader = load("res://Scripts/ReadObjects.gd")
+
+var All_Comments = []
+var All_Uploads = []
+var All_Watches = []
+
+# these are the videos we decided to serve on this given day
+var todays_uploads = []
+var todays_comments = [] 
+var todays_to_watch = []
 
 # Update player variables that affect the story options they may receive
 # and increase day counter by 1
@@ -88,6 +103,10 @@ func lockPlayerGoodOrBad():
 # check variables at the start of a new day
 func newDay():
 	
+	# this should update our daily variables for watchable videos
+	# theoretcially
+	
+	
 	# check if player's ending has been locked yet
 	lockPlayerToEnding()
 	lockPlayerGoodOrBad()	
@@ -110,6 +129,18 @@ func Comment(action):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# we need to load in our total videos and comments
+	var All_Vids = Loader.read_in_videos()
+	All_Comments = Loader.read_in_comments()
+	
+	# now is a good time to separate our videos
+	# into our videos and not our videos
+	for video in All_Vids:
+		if video.user != USERNAME:
+			All_Watches.append(video)
+		else:
+			All_Uploads.append(video)
+	
 	# pass # Replace with function body.
 	newDay()
 	endDay()

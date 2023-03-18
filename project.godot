@@ -39,6 +39,7 @@ config/icon="res://icon.png"
 [autoload]
 
 RecVideos="*res://Scripts/RecVideos.gd"
+GameManager="*res://Scripts/GameManager.gd"
 
 [gui]
 
