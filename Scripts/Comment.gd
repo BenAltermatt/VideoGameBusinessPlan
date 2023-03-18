@@ -12,7 +12,6 @@ const PROFILE_PIC_PATH = "res://ProfilePics/"
 class_name Comment
 
 var user : String = "NO_NAME"
-var pfp : ImageTexture = ImageTexture.new()
 var pfp_str : String = "default.png"
 var text : String = "NO_TEXT"
 var good_thresh : int = 0
@@ -24,7 +23,6 @@ var responses = []
 # I want to be able to parse a comment out of a string from a file
 func _init(block=null):
 	assert(block !=  null, "Need a block to make a comment. Got null.")
-	pfp = _load_texture(pfp_str)
 	
 	var lines = block.split('\n')
 	
@@ -109,7 +107,7 @@ func _read_pfp(content:String):
 	var start = content.find("\"")
 	var end = content.rfind("\"")
 	pfp_str = content.substr(start + 1, end - start - 1)
-	pfp = _load_texture(pfp_str)
+
 
 func print_comment():
 	print("(good_thresh, end_a_thresh, time_thresh) are (%d, %d, %d)" % [good_thresh, end_a_thresh, time_thresh])
@@ -121,13 +119,13 @@ func print_comment():
 		print("\t%s" % resp.text)
 		print("\t(good_change, end_a_change): (%d, %d)" % [resp.good_change, resp.end_a_change])
 
-func _load_texture(filename : String) -> ImageTexture:
+func load_texture() -> ImageTexture:
 	var retImg : ImageTexture = ImageTexture.new()
 	var img : Image = Image.new()
 	
-	var err = img.load(PROFILE_PIC_PATH + filename)
+	var err = img.load(PROFILE_PIC_PATH + pfp_str)
 	if err != OK:
-		assert(false, "Failed to load in a profile pic asset. Filename %s" % filename)
+		assert(false, "Failed to load in a profile pic asset. Filename %s" % pfp_str)
 		return retImg
 	
 	retImg.create_from_image(img)

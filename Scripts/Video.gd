@@ -1,6 +1,3 @@
-tool
-extends EditorScript
-
 const VIDEO_FILE_PATH = "res://VideoFiles/"
 const THUMBNAIL_PATH = "res://Thumbnails/"
 
@@ -10,9 +7,7 @@ var title : String = "NO_TITLE"
 var user : String = "NO_USER"
 var desc : String = "NO_DESCRIPTION"
 var video_fname : String = "NO_FILENAME"
-var vid : VideoStream = VideoStream.new()
 var thumbnail_fname : String = "NO_FILENAME"
-var thumbnail : ImageTexture = ImageTexture.new()
 var good_thresh : int = -1
 var end_a_thresh : int = -1
 var time_thresh : int = -1
@@ -20,7 +15,9 @@ var good_change : int = -1
 var end_a_change : int = -1
 
 
-func __init__(block: String):
+func _init(block=null):
+	assert(block != null, "Block needs an initial value")
+	
 	# lets split up the blocks by lines
 	var lines = block.split("\n")
 	
@@ -48,15 +45,15 @@ func __init__(block: String):
 func _handle_attr(line:String):
 	# cut off the dash
 	var subs = line.substr(line.find("-") + 1).split(":")
-	var type = subs[0].to_lower()
+	var type = subs[0].to_lower().strip_edges()
 	var val = ""
 	for sub_i in range(1, len(subs)):
 		val += subs[sub_i]
 	
-	val = val.strip_edges("")
+	val = val.strip_edges()
 	
 	# now we should find out which attribute we are defining
-	match subs:
+	match type:
 		"user":
 			_read_user(val)
 		"tfile":
@@ -68,7 +65,7 @@ func _handle_attr(line:String):
 		"change":
 			_read_change(val)
 		_:
-			assert(false, "Illegal video argument provided %s" % subs)
+			assert(false, "Illegal video argument provided %s" % type)
 
 func _read_user(content:String):
 	var start = content.find("\"")
@@ -85,8 +82,6 @@ func _read_thumb(content:String):
 	var end = content.rfind("\"")
 	thumbnail_fname = content.substr(start + 1, end - 1)
 	
-	# now we want to actually load in the file as well
-	thumbnail = _load_texture(thumbnail_fname)
 	
 func _read_change(content:String):
 	var start = content.find("(")
@@ -114,13 +109,13 @@ func print_video():
 	print("(good_change, end_a_change) are (%d, %d)" % [good_change, end_a_change])
 	
 
-func _load_texture(filename : String) -> ImageTexture:
+func load_texture() -> ImageTexture:
 	var retImg : ImageTexture = ImageTexture.new()
 	var img : Image = Image.new()
 	
-	var err = img.load(THUMBNAIL_PATH + filename)
+	var err = img.load(THUMBNAIL_PATH + thumbnail_fname)
 	if err != OK:
-		assert(false, "Failed to load in a profile pic asset. Filename %s" % filename)
+		assert(false, "Failed to load in a profile pic asset. Filename %s" % thumbnail_fname)
 		return retImg
 	
 	retImg.create_from_image(img)

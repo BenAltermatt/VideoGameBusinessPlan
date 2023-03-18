@@ -21,7 +21,7 @@ func _ready():
 	
 	
 	# we need to find the comment's parts
-	get_node("Visual Comment/Pfp").texture = myComment.pfp
+	get_node("Visual Comment/Pfp").texture = myComment.load_texture()
 	get_node("Visual Comment/Username").text = myComment.user
 	get_node("Visual Comment/Comment Content").text = myComment.text
 
