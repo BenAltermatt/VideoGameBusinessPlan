@@ -41,3 +41,10 @@ func _on_Button_pressed():
 func _on_Youtube_pressed():
 	stop()
 	pass # Replace with function body.
+
+
+func _on_Rewind_pressed():
+	stream_position = 0
+	set_stream_position(0)
+	print("its rewind time")
+	pass # Replace with function body.

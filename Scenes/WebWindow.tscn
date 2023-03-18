@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/PopupDialog.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/WebWindow.gd" type="Script" id=2]
@@ -6,8 +6,10 @@
 [ext_resource path="res://Scripts/YouTube.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/SingleVideoWatch.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Comment Section.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=7]
 
 [sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 7 )
 
 [node name="Window" type="Control"]
 anchor_right = 1.0
@@ -68,6 +70,6 @@ grow_horizontal = 0
 grow_vertical = 0
 size_flags_horizontal = 0
 custom_fonts/normal_font = SubResource( 1 )
-text = "I need to upload before I log off today"
+text = "I need to upload on my dashboard before I log off today"
 
 [connection signal="pressed" from="PowerButton" to="PopupDialog" method="_on_PowerButton_pressed"]

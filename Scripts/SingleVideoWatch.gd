@@ -44,9 +44,24 @@ func set_up():
 
 func set_video_current(index):
 	#print(index)
-	videos[0] = videos[index]
-	videos[index] = RecVideos.cur_video
-	RecVideos.cur_video = videos[0]
+	RecVideos.cur_video = videos[index]
+	
+	var shuffledList = [] 
+	var indexList = range(videos.size())
+	for i in range(videos.size()):
+		var x = randi()%indexList.size()
+		shuffledList.append(videos[indexList[x]])
+		indexList.remove(x)
+	videos = shuffledList
+	for i in range(videos.size()):
+		if videos[i] == RecVideos.cur_video:
+			print( "found old index!")
+			var temp = videos[0]
+			videos[0] = RecVideos.cur_video
+			videos[i] = temp
+	
+	#for i in range(videos.size()):
+	#	print(videos[i].title)
 	set_up()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
