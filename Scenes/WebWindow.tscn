@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://PopupDialog.gd" type="Script" id=1]
-[ext_resource path="res://WebWindow.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/PopupDialog.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/WebWindow.gd" type="Script" id=2]
 [ext_resource path="res://icons/power-button-icon.png" type="Texture" id=3]
-[ext_resource path="res://YouTube.gd" type="Script" id=4]
-[ext_resource path="res://SingleVideoWatch.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/YouTube.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/SingleVideoWatch.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Comment Section.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -38,6 +39,8 @@ script = ExtResource( 4 )
 visible = false
 margin_right = 40.0
 margin_bottom = 24.0
+
+[node name="Control" parent="TabContainer/YouTube Dashboard" instance=ExtResource( 6 )]
 
 [node name="PowerButton" type="Button" parent="."]
 anchor_left = 0.45
