@@ -22,7 +22,8 @@ var responses = []
 
 # I want to be able to parse a comment out of a string from a file
 func _init(block=null):
-	assert(block !=  null, "Need a block to make a comment. Got null.")
+	if(block == null):
+		return
 	
 	var lines = block.split('\n')
 	
@@ -151,4 +152,8 @@ class Response:
 
 		good_change = int(val_strs[0])
 		end_a_change = int(val_strs[1])
+		
+	func print_response():
+		print("Text is %s" % text)
+		print("Good change and end_a_change are (%d, %d)" % [good_change, end_a_change])
 	
