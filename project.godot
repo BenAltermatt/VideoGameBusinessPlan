@@ -13,15 +13,25 @@ _global_script_classes=[ {
 "class": "Comment",
 "language": "GDScript",
 "path": "res://Scripts/Comment.gd"
+}, {
+"base": "Reference",
+"class": "TempVideo",
+"language": "GDScript",
+"path": "res://TempVideo.gd"
 } ]
 _global_script_class_icons={
-"Comment": ""
+"Comment": "",
+"TempVideo": ""
 }
 
 [application]
 
 config/name="VideoGameBusinessPlan"
 config/icon="res://icon.png"
+
+[autoload]
+
+RecVideos="*res://RecVideos.gd"
 
 [gui]
 
