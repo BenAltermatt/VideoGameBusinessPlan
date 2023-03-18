@@ -13,14 +13,19 @@ var thumbnail_path = "res://GameTextureAssets/"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#print( videos[0].title)
+	#var cur_vid = RecVideos.cur_video
+	#print(cur_vid.title)
 	set_up()
+	var videoplayer = get_node("VideoPlayer")
+	videoplayer.stop()
 	pass # Replace with function body.
 
 func set_up():
 	var cur_vid = RecVideos.cur_video
 	var videoplayer = get_node("VideoPlayer")
-	videoplayer.paused = false
+	#print(video_path + cur_vid.video_fname)
 	videoplayer.stream = load( video_path + cur_vid.video_fname)
+	videoplayer.paused = false
 	videoplayer.play()
 	var title = get_node("Title")
 	title.set_text(cur_vid.title)
@@ -43,7 +48,7 @@ func set_up():
 			image.texture = texture
 
 func set_video_current(index):
-	#print(index)
+	print("setting to index: " + str(index))
 	RecVideos.cur_video = videos[index]
 	
 	var shuffledList = [] 
@@ -53,6 +58,7 @@ func set_video_current(index):
 		shuffledList.append(videos[indexList[x]])
 		indexList.remove(x)
 	videos = shuffledList
+	RecVideos.videos = videos
 	for i in range(videos.size()):
 		if videos[i] == RecVideos.cur_video:
 			print( "found old index!")
@@ -62,6 +68,8 @@ func set_video_current(index):
 	
 	#for i in range(videos.size()):
 	#	print(videos[i].title)
+	
+	print(RecVideos.cur_video)
 	set_up()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -70,6 +78,8 @@ func set_video_current(index):
 
 func _on_Youtube_pressed():
 	self.hide()
+	RecVideos.single_vid = false
+	RecVideos.multiple_vid = true
 	pass 
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/PopupDialog.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/WebWindow.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Scenes/SingleVideoWatch.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Comment Section.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Scenes/HomePage.tscn" type="PackedScene" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 7 )
@@ -34,6 +35,8 @@ margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
 script = ExtResource( 4 )
+
+[node name="HomePage" parent="TabContainer/YouTube" instance=ExtResource( 8 )]
 
 [node name="SingleWatchPage" parent="TabContainer/YouTube" instance=ExtResource( 5 )]
 
