@@ -44,6 +44,7 @@ margin_left = 949.0
 margin_right = 1024.0
 margin_bottom = 75.0
 rect_min_size = Vector2( 75, 75 )
+text = "X"
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/CloseButton"]
 anchor_right = 1.0
