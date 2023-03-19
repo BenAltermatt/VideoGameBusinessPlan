@@ -16,7 +16,7 @@ func _ready():
 #func _process(delta):
 #	pass
 func _on_PowerButton_pressed():
-	print("Popup!")
+	#print("Popup!")
 	#set_text("")
 	var uploaded_today = false
 	# If the user has not uploaded a video today

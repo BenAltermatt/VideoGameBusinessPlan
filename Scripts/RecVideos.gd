@@ -1,12 +1,12 @@
 extends Node
 
-var READ_OBJECTS_PATH = "res://Scripts/ReadObjects.gd"
-var readObjects = load(READ_OBJECTS_PATH).new()
-var videos = readObjects.read_in_videos()
+"""
+var videos = GameManager.cur_watches
 var cur_video = videos[0]
 var single_vid = false
 var multiple_vid = false
 var cur_vid_index = 0
+"""
 
 
 # Called when the node enters the scene tree for the first time.

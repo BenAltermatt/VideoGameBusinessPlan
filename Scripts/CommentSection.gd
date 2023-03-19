@@ -20,7 +20,7 @@ var replies = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# read in the comments (this is a temporary setup)	
-	var comments = read_coms.read_in_comments()
+	var comments = GameManager.cur_comments
 	var container = get_node("PanelContainer/ScrollContainer/VBoxContainer")
 	
 	for c_ind in range(len(comments)):
