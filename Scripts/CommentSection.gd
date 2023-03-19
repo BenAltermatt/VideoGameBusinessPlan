@@ -30,7 +30,7 @@ func _ready():
 		container.add_child(com)
 		
 		var resp = Responses.instance()
-		comments[c_ind].print_comment()
+
 		resp.init(comments[c_ind], c_ind)
 		resp.visible = false
 		resp.connect("successful_response",self,"_handle_reply_finished")
