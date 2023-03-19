@@ -24,12 +24,14 @@ rect_min_size = Vector2( 0, 124 )
 text = "fsjdklfjdkl"
 
 [node name="TextureButton" type="TextureButton" parent="Panel"]
+anchor_left = 0.998
 anchor_right = 0.998
 anchor_bottom = 1.0
-margin_left = 882.352
+margin_left = -139.6
 margin_top = 0.00799996
 margin_right = 0.0479736
 margin_bottom = 0.0159302
+rect_min_size = Vector2( 0, 20 )
 size_flags_horizontal = 7
 size_flags_vertical = 7
 texture_normal = ExtResource( 1 )
