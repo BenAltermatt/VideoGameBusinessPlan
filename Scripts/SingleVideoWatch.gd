@@ -36,8 +36,6 @@ func set_up():
 	for n in range(1,num_videos):
 		var rec_vid_node = get_node("Video" + str(n))
 		
-		print(len(GameManager.cur_watches))
-		print(n)
 		var rec_vid = GameManager.cur_watches[n]
 		#print(rec_vid.title)
 		#print(rec_vid.user)

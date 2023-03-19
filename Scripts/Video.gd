@@ -1,5 +1,5 @@
 const VIDEO_FILE_PATH = "res://VideoFiles/"
-const THUMBNAIL_PATH = "res://Thumbnails/"
+const THUMBNAIL_PATH = "res://VideoThumbnails/"
 
 class_name YTVideo
 
