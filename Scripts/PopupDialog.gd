@@ -12,12 +12,10 @@ func _ready():
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 func _on_PowerButton_pressed():
 	# If the user has not uploaded a video today
 	if ( !GameManager.uploaded ):
 		#label.set_text("I need to upload before I log off today")
 		popup()
-	pass # Replace with function body.
+	else :
+		GameManager.newDay()

@@ -131,21 +131,25 @@ func _serve_comments():
 # check variables at the start of a new day
 func newDay():
 	# change to transition scene
-	# TODO
+	get_tree().change_scene("res://Scenes/DayTransition.tscn")
 	
+
 	# increment the current time frame by one
 	curDay += 1
+
 	
 	# update the servings for the day
 	_serve_uploads()
 	_serve_watches()
 	_serve_comments()
+
 	
 	# reset our tracker for a valid end of day segment
 	uploaded = false
-	
+	yield(get_tree().create_timer(1.5), "timeout")
+
 	# get back to the basic website scene
-	# TODO
+	get_tree().change_scene("res://Scenes/WebWindow.tscn")
 	
 	
 	# check if player's ending has been locked yet

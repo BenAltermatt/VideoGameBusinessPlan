@@ -21,7 +21,7 @@ func set_up():
 	for n in range(0, num_videos):
 		#print(videos[n].title)
 		var rec_vid_node = get_node("Video" + str(n + 1) )
-		var rec_vid = videos[n]
+		var rec_vid = GameManager.cur_watches[n]
 		
 		rec_vid_node.get_node("Title").set_text(rec_vid.title)
 		rec_vid_node.get_node("User").set_text(rec_vid.user)
