@@ -1,6 +1,6 @@
 extends Node
 
-var current_screen = 0
+var current_screen = 1
 var comment_val = null
 var content_val = null
 
@@ -33,7 +33,3 @@ func _on_Comment_pressed():
 		comment_val.visible = true
 		content_val.visible = false
 	current_screen = 0
-
-
-func _on_TextureButton_pressed():
-	print("Button pressed")
