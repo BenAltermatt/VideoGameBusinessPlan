@@ -16,11 +16,8 @@ func _ready():
 #func _process(delta):
 #	pass
 func _on_PowerButton_pressed():
-	#print("Popup!")
-	#set_text("")
-	var uploaded_today = false
 	# If the user has not uploaded a video today
-	if ( !uploaded_today ):
+	if ( !GameManager.uploaded ):
 		#label.set_text("I need to upload before I log off today")
 		popup()
 	pass # Replace with function body.

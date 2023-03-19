@@ -50,7 +50,9 @@ func _uploadClicked():
 	if _selectedVideo == null:
 		print("No video selected.")
 		return
-	print("Uploading video: " + _selectedVideo.title)
+	#print("Uploading video: " + _selectedVideo.title)
+	GameManager.updateCoords(_selectedVideo.good_change, _selectedVideo.end_a_change)
+	GameManager.uploaded = true
 
 func loadVideosFromFolder(path: String) -> Array:
 	var dir = Directory.new()
