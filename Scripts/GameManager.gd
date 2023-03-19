@@ -52,6 +52,8 @@ func updateCoords(xcoord, ycoord):
 	x += xcoord
 	y += ycoord
 	
+	print("Current Ending progression: (%d, %d)" % [x, y])
+	
 # get the players current coordinates on the decision graph to determine what videos/uploads/comments they see 
 func getCoords():
 	return Vector2(x, y)
