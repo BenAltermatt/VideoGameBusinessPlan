@@ -139,7 +139,6 @@ func newDay():
 	_serve_watches()
 	_serve_comments()
 	
-	cur_watches[0].print_video()
 	# reset our tracker for a valid end of day segment
 	uploaded = false
 	
@@ -176,10 +175,10 @@ func _ready():
 	# now is a good time to separate our videos
 	# into our videos and not our videos
 	for video in All_Vids:
-		if video.user != USERNAME:
+		if video.user != USERNAME: 
 			All_Watches.append(video)
-		else:
-			All_Uploads.append(video)
+		#else: # we have this here for debugging rn
+		All_Uploads.append(video)
 			
 	newDay() # set up the first day
 	

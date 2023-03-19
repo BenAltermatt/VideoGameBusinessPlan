@@ -1,13 +1,16 @@
 extends Control
 class_name UploadManager
 
+var YTVideo = load("res://Scripts/Video.gd")
+
 var _allVideos = []
 var _uploadOptionTemplate = load("res://Prefabs/UploadOptionTemplate.tscn")
-var _selectedVideo: UploadableVideoResource
+var _selectedVideo: YTVideo
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_allVideos = loadVideosFromFolder("res://UploadableVideos/")
+	#_allVideos = loadVideosFromFolder("res://UploadableVideos/")
+	_allVideos = GameManager.cur_uploads
 	_openPage(0, 0, 0)
 	# warning-ignore:return_value_discarded
 	get_node("VBoxContainer/MarginContainer/UploadButton").connect("pressed", self, "_uploadClicked")
@@ -17,38 +20,37 @@ func _ready():
 func _openPage(x: float, y: float, day: int):
 	_selectedVideo = null
 	_delete_children(get_node("VBoxContainer/Panel/GridContainer"))
-	var todaysVideos = _filterVideos(x, y, day)
-	for i in range(todaysVideos.size()):
+	#var todaysVideos = _filterVideos(x, y, day)
+	for i in range(len(_allVideos)):
 		var template = _uploadOptionTemplate.instance()
 		get_node("VBoxContainer/Panel/GridContainer").add_child((template))
-		template._setUp(todaysVideos[i], self)
+		template._setUp(_allVideos[i], self)
 
-func _filterVideos(x: float, y: float, day: int) -> Array:
-	var result = []
-	for i in range(_allVideos.size()):
-		if _allVideos[i].xMin > x:
-			continue
-		if _allVideos[i].xMax < x:
-			continue
-		if _allVideos[i].yMin > y:
-			continue
-		if _allVideos[i].yMax < y:
-			continue
-		if _allVideos[i].dayMin > day:
-			continue
-		if _allVideos[i].dayMax < day:
-			continue
-		result.append(_allVideos[i])
-	return result
+#func _filterVideos(x: float, y: float, day: int) -> Array:
+#	var result = []
+#	for i in range(_allVideos.size()):
+#		if _allVideos[i].xMin > x:
+#		if _allVideos[i].xMax < x:
+#			continue
+#		if _allVideos[i].yMin > y:
+#			continue
+#		if _allVideos[i].yMax < y:
+#			continue
+#		if _allVideos[i].dayMin > day:
+#			continue
+#		if _allVideos[i].dayMax < day:
+#			continue
+#		result.append(_allVideos[i])
+#	return result
 
-func _videoSelected(video: UploadableVideoResource):
+func _videoSelected(video):
 	_selectedVideo = video
 
 func _uploadClicked():
 	if _selectedVideo == null:
 		print("No video selected.")
 		return
-	print("Uploading video: " + _selectedVideo.videoName)
+	print("Uploading video: " + _selectedVideo.title)
 
 func loadVideosFromFolder(path: String) -> Array:
 	var dir = Directory.new()
