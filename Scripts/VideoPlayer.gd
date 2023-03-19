@@ -12,7 +12,7 @@ func _ready():
 	
 	#stream = load(path_to_vid)
 	#play()
-	print("done loading")
+	#print("done loading")
 
 	pass # Replace with function body.
 
@@ -46,5 +46,5 @@ func _on_Youtube_pressed():
 func _on_Rewind_pressed():
 	stream_position = 0
 	set_stream_position(0)
-	print("its rewind time")
+	#print("its rewind time")
 	pass # Replace with function body.

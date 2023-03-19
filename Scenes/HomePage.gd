@@ -4,7 +4,7 @@ extends Control
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var videos = RecVideos.videos
+var videos = GameManager.cur_watches
 var num_videos = 6
 var video_path = "res://VideoFiles/"
 var thumbnail_path = "res://GameTextureAssets/"
@@ -16,10 +16,10 @@ func _ready():
 	pass # Replace with function body.
 	
 func set_up():
-	videos = RecVideos.videos
-	print( "setting videos")
+	videos = GameManager.cur_watches
+	#print( "setting videos")
 	for n in range(0, num_videos):
-		print(videos[n].title)
+		#print(videos[n].title)
 		var rec_vid_node = get_node("Video" + str(n + 1) )
 		var rec_vid = videos[n]
 		
@@ -40,44 +40,44 @@ func set_up():
 func open_single_view(index):
 	#var SINGLE_VID_PATH = "res://Scripts/SingleVideoWatch.gd"
 	#var singleVid = load(SINGLE_VID_PATH).new()
-	RecVideos.single_vid = true
-	RecVideos.cur_vid_index = index
+	GameManager.single_vid = true
+	GameManager.cur_vid_index = index
 	#singleVid.set_video_current(index)
 	
 	
 
 func _on_Button1_pressed():
-	print("button1")
+	#print("button1")
 	open_single_view(0)
 	pass # Replace with function body.
 
 
 func _on_Button2_pressed():
-	print("button2")
+	#print("button2")
 	open_single_view(1)
 	pass # Replace with function body.
 
 
 func _on_Button3_pressed():
-	print("button3")
+	#print("button3")
 	open_single_view(2)
 	pass # Replace with function body.
 
 
 func _on_Button4_pressed():
-	print("button4")
+	#print("button4")
 	open_single_view(3)
 	pass # Replace with function body.
 
 
 func _on_Button5_pressed():
-	print("button5")
+	#print("button5")
 	open_single_view(4)
 	pass # Replace with function body.
 
 
 func _on_Button6_pressed():
-	print("button6")
+	#print("button6")
 	open_single_view(5)
 	pass # Replace with function body.
 

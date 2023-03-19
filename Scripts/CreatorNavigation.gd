@@ -9,18 +9,7 @@ func _ready():
 	comment_val = get_node("PanelContainer/Control2")
 	content_val = get_node("PanelContainer/Control3")
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	
-	if delta > 1:
-		print("comment_val.visibleAHAHAH")
-		comment_val.visible = !comment_val.visible
-		content_val.visible = !content_val.visible
-
 func _on_ContentButton_pressed():
-	print("let me die")
-	
 	if current_screen == 0: # comment screen
 		comment_val.visible = false
 		content_val.visible = true
@@ -28,7 +17,6 @@ func _on_ContentButton_pressed():
 
 
 func _on_Comment_pressed():
-	print("{Pisss}")
 	if current_screen == 1: # content screen
 		comment_val.visible = true
 		content_val.visible = false
