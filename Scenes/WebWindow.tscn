@@ -5,7 +5,7 @@
 [ext_resource path="res://icons/power-button-icon.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/YouTube.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/SingleVideoWatch.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Comment Section.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/CreatorNavigation.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Scenes/HomePage.tscn" type="PackedScene" id=8]
 

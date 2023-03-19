@@ -24,9 +24,10 @@ anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="Control3" type="Control" parent="PanelContainer"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1017.0
+margin_bottom = 593.0
 mouse_filter = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="PanelContainer/Control3"]
@@ -41,10 +42,11 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 812.2
-margin_bottom = 593.0
+margin_right = 801.0
+margin_bottom = 579.0
 
 [node name="Control2" type="Control" parent="PanelContainer"]
+visible = false
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 1017.0
@@ -72,8 +74,10 @@ __meta__ = {
 }
 
 [node name="Control" type="Control" parent="PanelContainer"]
-anchor_right = 0.2
-anchor_bottom = 1.0
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1017.0
+margin_bottom = 593.0
 mouse_filter = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/Control"]
