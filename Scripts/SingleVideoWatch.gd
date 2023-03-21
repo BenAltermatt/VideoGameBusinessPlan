@@ -6,7 +6,7 @@ extends Control
 # var b = "text"
 var num_videos = 6
 var video_path = "res://VideoFiles/"
-var thumbnail_path = "res://GameTextureAssets/"
+var thumbnail_path = "res://VideoThumbnails/"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -39,7 +39,7 @@ func set_up():
 		var rec_vid = GameManager.cur_watches[n]
 		#print(rec_vid.title)
 		#print(rec_vid.user)
-		#print(rec_vid.thumbnail_path)
+		#print(rec_vid.thumbnail_fname)
 		rec_vid_node.get_node("Title").set_text(rec_vid.title)
 		rec_vid_node.get_node("User").set_text(rec_vid.user)
 		var image = rec_vid_node.get_node("TextureRect")

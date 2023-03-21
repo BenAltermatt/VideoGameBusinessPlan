@@ -36,7 +36,12 @@ func _init(block=null):
 	# next is the title
 	start = top_line.find("\"")
 	end = top_line.rfind("\"")
+	#print(start)
+	#print(end)
 	title = top_line.substr(start + 1, end - 1)
+	end = title.rfind("\"")
+	title = title.substr(0, end)
+	#print(title)
 	
 	# now we want to go through and handle the parsing of each attribute
 	for line_ind in range(1, len(lines)):
