@@ -6,6 +6,8 @@
 
 # These are all the things we can get out of a single 
 # comment in a game
+tool
+extends EditorScript
 
 const PROFILE_PIC_PATH = "res://ProfilePics/"
 
@@ -14,9 +16,8 @@ class_name Comment
 var user : String = "NO_NAME"
 var pfp_str : String = "default.png"
 var text : String = "NO_TEXT"
-var good_thresh : int = 0
-var end_a_thresh : int = 0
-var time_thresh : int = 0
+var day_thresh : int = 0
+var sl_tag : String = "NO_SL"
 var responses = []
 
 
@@ -50,19 +51,12 @@ func __init__(block:String):
 	
 
 func _read_args(top_line:String):
-	var top_args = top_line.split(" ")
+	var start = top_line.find("(")
+	var end = top_line.find(")")
+	var args = top_line.substr(start + 1, end - start - 1).split(",")
 	
-	# the first arg should be (num,
-	var p_buf = top_args[0].right(1)
-	good_thresh = int(p_buf.left(len(p_buf) - 1))
-	
-	#second should be num,
-	p_buf = top_args[1]
-	end_a_thresh = int(p_buf.left(len(p_buf) - 1))
-	
-	# third should be num)
-	p_buf = top_args[2]
-	time_thresh = int(p_buf.left(len(p_buf) - 1))
+	day_thresh = int(args[0].strip_edges())
+	sl_tag = args[1].strip_edges().to_lower()
 
 func _read_comm(top_line:String):
 	var start = top_line.find("\"")
@@ -111,7 +105,7 @@ func _read_pfp(content:String):
 
 
 func print_comment():
-	print("(good_thresh, end_a_thresh, time_thresh) are (%d, %d, %d)" % [good_thresh, end_a_thresh, time_thresh])
+	print("(day_thresh, storyline_id) are (%d, %s)" % [day_thresh, sl_tag])
 	print("Comment: %s" % text)
 	print("Username: %s" % user)
 	print("Pfp file: %s" % pfp_str)
@@ -135,8 +129,7 @@ func load_texture() -> ImageTexture:
 	
 class Response:
 	var text = "EMPTY_RESPONSE"
-	var good_change = 0
-	var end_a_change = 0
+	var changes = {}
 
 	func _init(res_contents=null):
 		assert(res_contents != null, "Need contents for a response, got null.")
@@ -149,7 +142,7 @@ class Response:
 		# now we want to get the good and bad changes
 		var c_params = res_contents.substr(end + 1).strip_edges().right(1)
 		var val_strs = c_params.left(len(c_params) - 1).split(",")
-
+		
 		good_change = int(val_strs[0])
 		end_a_change = int(val_strs[1])
 		

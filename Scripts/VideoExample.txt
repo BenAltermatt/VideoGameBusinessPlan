@@ -1,14 +1,14 @@
-(good_thresh, end_a_thresh, time_thresh) "Video Title"
-- User: "username"
-- Desc: "This is the video description"
-- vfile: "videofile.mp4"
-- tfile : "thumbnail.jpg"
-- change : (good_change, end_a_change)
-;
-
-(110, 20, 11) "I made a robot dog that pisses beer"
+(2, main) "I made a robot dog that pisses beer"
 - User : "Michael Reeves"
 - Desc : "NightmareNightmareNightmareNightmareNightmare"
 - vfile : "actual_video.mp4"
 - tfile : "thumbnail_file.mp4"
-- change : (10, -10)
+- change : (good = 10, bad = -10)
+;
+
+(2, main) "I made a robot dog that pisses beer"
+- User : "Michael Reeves"
+- Desc : "NightmareNightmareNightmareNightmareNightmare"
+- vfile : "actual_video.mp4"
+- tfile : "thumbnail_file.mp4"
+- change : (good = 10, bad = -10)
