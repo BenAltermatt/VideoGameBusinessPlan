@@ -1,5 +1,4 @@
 # it should be noted that these files cannot have semicolons or newlines within content of comments
-
 const COMMENT_TEXT_PATH = "res://Scripts/Comments.txt"
 const COMMENT_OBJECT_PATH = "res://Scripts/Comment.gd"
 const VIDEO_TEXT_PATH = "res://Scripts/Videos.txt"
@@ -41,4 +40,7 @@ static func read_in_videos():
 
 
 func _run():
-	read_in_videos()
+	var videos = read_in_videos()
+	for vid in videos:
+		vid.print_video()
+		print()

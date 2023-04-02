@@ -6,9 +6,6 @@
 
 # These are all the things we can get out of a single 
 # comment in a game
-tool
-extends EditorScript
-
 const PROFILE_PIC_PATH = "res://ProfilePics/"
 
 class_name Comment
@@ -52,7 +49,7 @@ func __init__(block:String):
 
 func _read_args(top_line:String):
 	var start = top_line.find("(")
-	var end = top_line.find(")")
+	var end = top_line.find(")", start)
 	var args = top_line.substr(start + 1, end - start - 1).split(",")
 	
 	day_thresh = int(args[0].strip_edges())
@@ -110,9 +107,7 @@ func print_comment():
 	print("Username: %s" % user)
 	print("Pfp file: %s" % pfp_str)
 	for resp in responses:
-		print("Response:")
-		print("\t%s" % resp.text)
-		print("\t(good_change, end_a_change): (%d, %d)" % [resp.good_change, resp.end_a_change])
+		resp.print_response()
 
 func load_texture() -> ImageTexture:
 	var retImg : ImageTexture = ImageTexture.new()
@@ -140,13 +135,22 @@ class Response:
 		text = res_contents.substr(start + 1, end - start - 1)
 
 		# now we want to get the good and bad changes
-		var c_params = res_contents.substr(end + 1).strip_edges().right(1)
-		var val_strs = c_params.left(len(c_params) - 1).split(",")
+		start = res_contents.rfind("(")
+		end = res_contents.rfind(")")
+		var sl_args = res_contents.substr(start + 1, end - start - 1).to_lower().split(",")
 		
-		good_change = int(val_strs[0])
-		end_a_change = int(val_strs[1])
+		# now, we have to add to the changes dictionary for each individual comment value
+		for sl_change in sl_args:
+			var sl = sl_change.split("=")[0].strip_edges()
+			var change = int(sl_change.split("=")[1].strip_edges())
+			
+			if changes.has(sl):
+				changes[sl] += change
+			else:
+				changes[sl] = change
 		
 	func print_response():
-		print("Text is %s" % text)
-		print("Good change and end_a_change are (%d, %d)" % [good_change, end_a_change])
-	
+		print("Response Text: %s" % text)
+		print("Response Changes:")
+		for key in changes:
+			print("\t%s : %d" % [key, changes[key]])
