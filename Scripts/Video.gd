@@ -8,11 +8,9 @@ var user : String = "NO_USER"
 var desc : String = "NO_DESCRIPTION"
 var video_fname : String = "NO_FILENAME"
 var thumbnail_fname : String = "NO_FILENAME"
-var good_thresh : int = -1
-var end_a_thresh : int = -1
-var time_thresh : int = -1
-var good_change : int = -1
-var end_a_change : int = -1
+var changes = {}
+var sl = "NO_STORYLINE"
+var time_thresh = -1
 
 
 func _init(block=null):
@@ -27,11 +25,10 @@ func _init(block=null):
 	# lets parse the threshold values
 	var start = top_line.find("(")
 	var end = top_line.find(")", start + 1)
-	var thresh_s = top_line.substr(start + 1, end - 1)
-	var thresh_ints = thresh_s.split(",")
-	good_thresh = int(thresh_ints[0].strip_edges())
-	end_a_thresh = int(thresh_ints[1].strip_edges())
-	time_thresh = int(thresh_ints[2].strip_edges())
+	var params = top_line.substr(start + 1, end - 1).to_lower().split(",")
+	sl = params[1].strip_edges()
+	time_thresh = int(params[0].strip_edges())
+	
 	
 	# next is the title
 	start = top_line.find("\"")
@@ -93,8 +90,14 @@ func _read_change(content:String):
 	var end = content.rfind(")")
 	var vals = content.substr(start + 1, end - 1).split(",")
 	
-	good_change = int(vals[0].strip_edges())
-	end_a_change = int(vals[1].strip_edges())
+	for val in vals:
+		var sl_tag = val.split("=")[0].strip_edges()
+		var change = int(val.split("=")[1].strip_edges())
+		
+		if changes.has(sl_tag):
+			changes[sl_tag] += change
+		else:
+			changes[sl_tag] = change
 	
 func _read_vfile(content:String):
 	var start = content.find("\"")
@@ -106,12 +109,15 @@ func load_vidstream():
 	return load(VIDEO_FILE_PATH + video_fname)
 
 func print_video():
-	print("(good_thresh, end_a_thresh, time_thresh) are (%d, %d, %d)" % [good_thresh, end_a_thresh, time_thresh])
+	print("(time_thresh, sl_tag) are (%d, %s)" % [time_thresh, sl])
 	print("Title: %s" % title)
 	print("User: %s" % user)
 	print("Description: %s" % desc)
 	print("Vidfile and TFile : %s, %s" % [video_fname, thumbnail_fname])
-	print("(good_change, end_a_change) are (%d, %d)" % [good_change, end_a_change])
+	var changes_str = "Changes are: "
+	for key in changes:
+		changes_str += ("%s = %d, " % [key, changes[key]])
+	print(changes_str.substr(0, len(changes_str) - 2)) 
 	
 
 func load_texture() -> ImageTexture:

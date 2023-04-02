@@ -1,45 +1,45 @@
-(110, 20, 11) "Teaching a Robot Dog to Pee Beer"
+(1, main) "Teaching a Robot Dog to Pee Beer"
 - User : "Michael Reeves"
 - Desc : "come get yall juice"
 - vfile : "pissrobot.webm"
 - tfile : "pissrobot.png"
-- change : (0, 0)
+- change : (good = 10, bad = -10)
 ;
 
-(110, 20, 11) "Lego Helicopter WIP"
+(1, main) "Lego Helicopter WIP"
 - User : "Team TPT Test Account"
 - Desc : "Made in 2008"
 - vfile : "testvideo.webm"
 - tfile : "legohelicopter.png"
-- change : (0, 0)
+- change : (good = 10, bad = -10)
 ;
-(110, 20, 11) "Big Buck Bunny Trailer (HD)"
+(1, main) "Big Buck Bunny Trailer (HD)"
 - User : "CureBeyond"
 - Desc : "From Big Buck Bunny official trailer: http://www.bigbuckbunny.org/index.php..."
 - vfile : "big-buck-bunny_trailer.webm"
 - tfile : "big_buck_bunny.png"
-- change : (0, 0)
+- change : (good = 10, bad = -10)
 ;
 
-(110, 20, 11) "Alban being punny but the rest of Noctyx has to suffer"
+(1, main) "Alban being punny but the rest of Noctyx has to suffer"
 - User : "Rey lookitsurei"
 - Desc : "Art & Animation: Me pog I’m on twitter! : https://twitter.com/lookitsurei DO NOT REPOST MY VIDEOS. "
 - vfile : "vtuber.webm"
 - tfile : "vtuber.jpeg"
-- change : (0, 0)
+- change : (good = 10, bad = -10)
 ;
-(110, 20, 11) "cotton 5(scottish fold kitten - female)"
+(1, main) "cotton 5(scottish fold kitten - female)"
 - User : "cotton220000"
 - Desc : "In her most polite and sweet mood! #cat #catlover #purr #catsofyoutube"
 - vfile : "meowmeowmeow.webm"
 - tfile : "kitty.jpeg"
-- change : (0, 0)
+- change : (good = 10, bad = -10)
 ;
 
-(110, 20, 11) "nooooooooooo i'm jus a widdle gobwin"
+(1, main) "nooooooooooo i'm jus a widdle gobwin"
 - User : "Aleks Le"
 - Desc : "no comment, just a widdle gobwin 😌 original post: https://twitter.com/leyawn/status/130... https://twitter.com/AleksLeVO https:/www.instagram.com/aleksle.vo/ https://www.twitch.tv/alekslevo"
 - vfile : "gobwin.webm"
 - tfile : "gobwin.jpeg"
-- change : (0, 0)
+- change : (good = 10, bad = -10)
 ;
