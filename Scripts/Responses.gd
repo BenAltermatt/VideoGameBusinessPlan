@@ -5,7 +5,7 @@ const LOADER = "res://Scripts/ReadObjects.gd"
 
 var Loader = load(LOADER)
 
-signal successful_response(index, good_change, end_a_change)
+signal successful_response(index, change_dict)
 var comment # this is an array of responses we have to display
 var glob_ind
 
@@ -32,4 +32,4 @@ func _ready():
 
 func _handle_responded(index):
 	var resp = comment.responses[index]
-	emit_signal("successful_response", glob_ind, resp.good_change, resp.end_a_change)
+	emit_signal("successful_response", glob_ind, resp.changes)

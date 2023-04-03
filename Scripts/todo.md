@@ -5,8 +5,8 @@
 3. ~Change comment read in~
 4. ~Change video file~
 5. ~Change video read in~
-6. Change comment signal chain
-7. Change Video watch / upload effect mechanic
+6. ~Change comment signal chain~
+7. ~Change Video watch / upload effect mechanic~
 8. Create event file
 9. Create event read in
 10. Create messages file

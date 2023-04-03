@@ -42,10 +42,10 @@ func _handle_comment_intent(index):
 	if !replies.has(index):
 		response_objs[index].visible = true
 
-func _handle_reply_finished(index, good_change, end_a_change):
+func _handle_reply_finished(index, changes_dict):
 	replies.append(index)
 	response_objs[index].visible = false
 	
 	#handle the good and bad change signaling
-	GameManager.updateCoords(good_change, end_a_change)
+	GameManager.update_prog(changes_dict)
 	
