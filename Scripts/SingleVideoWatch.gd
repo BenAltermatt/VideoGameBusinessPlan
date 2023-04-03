@@ -52,7 +52,8 @@ func set_video_current(index):
 	GameManager.cur_video = GameManager.cur_watches[index]
 	
 	# when this happens, the video changes should be submitted to the game manager
-	GameManager.updateCoords(GameManager.cur_watches[index].good_change, GameManager.cur_watches[index].end_a_change)
+	# GameManager.updateCoords(GameManager.cur_watches[index].good_change, GameManager.cur_watches[index].end_a_change)
+	GameManager.update_prog(GameManager.cur_watches[index].changes)
 	
 	var shuffledList = [] 
 	var indexList = range(len(GameManager.cur_watches))

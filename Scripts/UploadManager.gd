@@ -26,23 +26,6 @@ func _openPage(x: float, y: float, day: int):
 		get_node("VBoxContainer/Panel/GridContainer").add_child((template))
 		template._setUp(_allVideos[i], self)
 
-#func _filterVideos(x: float, y: float, day: int) -> Array:
-#	var result = []
-#	for i in range(_allVideos.size()):
-#		if _allVideos[i].xMin > x:
-#		if _allVideos[i].xMax < x:
-#			continue
-#		if _allVideos[i].yMin > y:
-#			continue
-#		if _allVideos[i].yMax < y:
-#			continue
-#		if _allVideos[i].dayMin > day:
-#			continue
-#		if _allVideos[i].dayMax < day:
-#			continue
-#		result.append(_allVideos[i])
-#	return result
-
 func _videoSelected(video):
 	_selectedVideo = video
 
@@ -51,7 +34,7 @@ func _uploadClicked():
 		print("No video selected.")
 		return
 	#print("Uploading video: " + _selectedVideo.title)
-	GameManager.updateCoords(_selectedVideo.good_change, _selectedVideo.end_a_change)
+	GameManager.update_prog(_selectedVideo.changes)
 	GameManager.uploaded = true
 
 func loadVideosFromFolder(path: String) -> Array:
