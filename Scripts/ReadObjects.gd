@@ -3,6 +3,8 @@ const COMMENT_TEXT_PATH = "res://Scripts/Comments.txt"
 const COMMENT_OBJECT_PATH = "res://Scripts/Comment.gd"
 const VIDEO_TEXT_PATH = "res://Scripts/Videos.txt"
 const VIDEO_OBJECT_PATH = "res://Scripts/Video.gd"
+const EVENT_TEXT_PATH = "res://Scripts/StoryEvents.txt"
+const EVENT_OBJECT_PATH = "res://Scripts/StoryEvents.gd"
 
 # This is in run rn, but we'll make it a method we can just
 # call later
@@ -38,6 +40,22 @@ static func read_in_videos():
 	
 	return videos
 
+static func read_in_events():
+	var StoryEvent = load(EVENT_OBJECT_PATH)
+	var file = File.new()
+	file.open(EVENT_TEXT_PATH, File.READ)
+	var blocks = file.get_as_text().split(";")
+
+	var events = {}
+	for block in blocks:
+		var event = StoryEvent.new(block)
+		
+		if events.has(event.og_sl):
+			events[event.og_sl].append(event)
+		else:
+			events[event.og_sl] = [event]
+			
+	return events
 
 func _run():
 	var videos = read_in_videos()
