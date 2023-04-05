@@ -20,6 +20,11 @@ _global_script_classes=[ {
 "path": "res://Scripts/SelectableVideo.gd"
 }, {
 "base": "Reference",
+"class": "StoryEvent",
+"language": "GDScript",
+"path": "res://Scripts/StoryEvent.gd"
+}, {
+"base": "Reference",
 "class": "TempVideo",
 "language": "GDScript",
 "path": "res://Scripts/TempVideo.gd"
@@ -42,6 +47,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Comment": "",
 "SelectableVideo": "",
+"StoryEvent": "",
 "TempVideo": "",
 "UploadManager": "",
 "UploadableVideoResource": "",
