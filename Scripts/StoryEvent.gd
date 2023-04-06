@@ -11,7 +11,7 @@ func _init(block=null):
 	var params = block.split(":")
 	
 	# these determine when/where the event triggers
-	time = params[0].split(",")[0].strip_edges()
+	time = int(params[0].split(",")[0].strip_edges())
 	og_sl = params[0].split(",")[1].strip_edges()
 	
 	# these are the options for the storyline to change to 
@@ -20,4 +20,8 @@ func _init(block=null):
 		new_sls.append(opts.strip_edges())
 
 func print_event():
-	
+	print("%d, %s :" % [time, og_sl])
+	var options = "\t"
+	for key in new_sls:
+		options += "%s, " % key
+	print(options.substr(0, len(options) - 2))

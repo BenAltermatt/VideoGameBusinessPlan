@@ -7,8 +7,8 @@
 5. ~Change video read in~
 6. ~Change comment signal chain~
 7. ~Change Video watch / upload effect mechanic~
-8. Create event file
-9. Create event read in
+8. ~Create event file~
+9. ~Create event read in~
 10. Create messages file
 11. Create messages read in
 12. Create a paths singleton

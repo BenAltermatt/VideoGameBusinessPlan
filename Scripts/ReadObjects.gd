@@ -1,10 +1,13 @@
+tool
+extends EditorScript
+
 # it should be noted that these files cannot have semicolons or newlines within content of comments
 const COMMENT_TEXT_PATH = "res://Scripts/Comments.txt"
 const COMMENT_OBJECT_PATH = "res://Scripts/Comment.gd"
 const VIDEO_TEXT_PATH = "res://Scripts/Videos.txt"
 const VIDEO_OBJECT_PATH = "res://Scripts/Video.gd"
 const EVENT_TEXT_PATH = "res://Scripts/StoryEvents.txt"
-const EVENT_OBJECT_PATH = "res://Scripts/StoryEvents.gd"
+const EVENT_OBJECT_PATH = "res://Scripts/StoryEvent.gd"
 
 # This is in run rn, but we'll make it a method we can just
 # call later
@@ -21,7 +24,6 @@ static func read_in_comments():
 	for block in blocks:
 		if len(block.strip_edges()) > 0:
 			comments.append(Comment.new(block.strip_edges()))
-			
 
 	return comments
 
@@ -48,17 +50,19 @@ static func read_in_events():
 
 	var events = {}
 	for block in blocks:
-		var event = StoryEvent.new(block)
-		
-		if events.has(event.og_sl):
-			events[event.og_sl].append(event)
-		else:
-			events[event.og_sl] = [event]
+		if len(block.strip_edges()) != 0:
+			var event = StoryEvent.new(block)
 			
-	return events
+			if events.has(event.og_sl):
+				events[event.og_sl].append(event)
+			else:
+				events[event.og_sl] = [event]
 
+	return events
+	
 func _run():
-	var videos = read_in_videos()
-	for vid in videos:
-		vid.print_video()
-		print()
+	var events = read_in_events()
+	for key in events:
+		for ev in events[key]:
+			ev.print_event()
+
