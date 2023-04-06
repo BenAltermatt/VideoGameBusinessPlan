@@ -16,3 +16,4 @@
 14. Put a limit on the number of watches, uploads, and comments per day
 15. Add dms
 16. Add a date to the top right
+17. Change comments representation to attach comments to specific video uploads
