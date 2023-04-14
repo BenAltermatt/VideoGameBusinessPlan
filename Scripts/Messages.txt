@@ -1,0 +1,8 @@
+1, main, SillyGoofy, true : What's up? This is the example message that 
+can be sent to the manager.;
+2, main, UhOh, true : This is the second message on main that can be sent to the 
+player.;
+2, main, HEHEHHA, true : Two of these messages can be sent to the player at once, this should be the 
+second within this day. We should laso be able to include new lines.;
+1, other, AHHHH, true: This is an example of a message that might show up for the player on a day
+in which they are not working.;
