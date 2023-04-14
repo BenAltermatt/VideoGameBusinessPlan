@@ -9,8 +9,8 @@
 7. ~Change Video watch / upload effect mechanic~
 8. ~Create event file~
 9. ~Create event read in~
-10. Create messages file
-11. Create messages read in
+10. ~Create messages file~
+11. ~Create messages read in~
 12. Create a paths singleton
 13. Get singleton to register events and pay attention to current story values
 14. Put a limit on the number of watches, uploads, and comments per day

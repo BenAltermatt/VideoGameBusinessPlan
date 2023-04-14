@@ -8,6 +8,8 @@ const VIDEO_TEXT_PATH = "res://Scripts/Videos.txt"
 const VIDEO_OBJECT_PATH = "res://Scripts/Video.gd"
 const EVENT_TEXT_PATH = "res://Scripts/StoryEvents.txt"
 const EVENT_OBJECT_PATH = "res://Scripts/StoryEvent.gd"
+const MESSAGE_TEXT_PATH = "res://Scripts/Messages.txt"
+const MESSAGE_OBJECT_PATH = "res://Scripts/Message.gd"
 
 # This is in run rn, but we'll make it a method we can just
 # call later
@@ -60,9 +62,27 @@ static func read_in_events():
 
 	return events
 	
+static func read_in_messages():
+	var Message = load(MESSAGE_OBJECT_PATH)
+	var file = File.new()
+	file.open(MESSAGE_TEXT_PATH, File.READ)
+	var blocks = file.get_as_text().split(";")
+	
+	var messages = {}
+	for block in blocks:
+		if len(block.strip_edges()) != 0:
+			var message = Message.new(block)
+			
+			if messages.has(message.sl):
+				messages[message.sl].append(message)
+			else:
+				messages[message.sl] = [message]
+				
+	return messages
+	
 func _run():
-	var events = read_in_events()
-	for key in events:
-		for ev in events[key]:
-			ev.print_event()
+	var messages = read_in_messages()
+	for key in messages:
+		for ev in messages[key]:
+			ev.print_message()
 
