@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Fonts/Roboto-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes/ToMessage.tscn" type="PackedScene" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 1 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.15
+color = Color( 0.172549, 0.172549, 0.172549, 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_left = 0.05
+anchor_top = 0.03
+anchor_right = 0.4
+anchor_bottom = 0.15
+custom_fonts/normal_font = SubResource( 1 )
+text = "Youtuber Client"
+fit_content_height = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_top = 0.15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Control" parent="VBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1024.0
