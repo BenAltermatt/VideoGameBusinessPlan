@@ -13,7 +13,7 @@ func init(pas_text, pas_margins, pas_left):
 	margins = pas_margins
 	left = pas_left
 	$Label.text = text.strip_edges()
-	$Label.get_stylebox("normal").set_expand_margin_size(StyleBox.MarginAll, margins)
+	$Label.get_stylebox("normal").set_expand_margin_all(margins)
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
