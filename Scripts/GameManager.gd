@@ -99,4 +99,4 @@ func _ready():
 		#else: # we have this here for debugging rn
 		All_Uploads.append(video)
 			
-	#newDay() # set up the first day
+	newDay() # set up the first day
