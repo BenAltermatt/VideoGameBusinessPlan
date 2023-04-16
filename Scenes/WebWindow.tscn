@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/PopupDialog.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/WebWindow.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Scenes/CreatorNavigation.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Scenes/HomePage.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/MessageTab.tscn" type="PackedScene" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 7 )
@@ -46,6 +47,13 @@ margin_right = 40.0
 margin_bottom = 24.0
 
 [node name="Control" parent="TabContainer/YouTube Dashboard" instance=ExtResource( 6 )]
+
+[node name="Messages" type="Tabs" parent="TabContainer"]
+visible = false
+margin_right = 40.0
+margin_bottom = 24.0
+
+[node name="Control" parent="TabContainer/Messages" instance=ExtResource( 9 )]
 
 [node name="PowerButton" type="Button" parent="."]
 anchor_left = 0.45
