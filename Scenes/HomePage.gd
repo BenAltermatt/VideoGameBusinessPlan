@@ -17,10 +17,13 @@ func _ready():
 	
 func set_up():
 	videos = GameManager.cur_watches
+	num_videos = min(6, len(GameManager.cur_watches))
+	
 	#print( "setting videos")
 	for n in range(0, num_videos):
 		#print(videos[n].title)
 		var rec_vid_node = get_node("Video" + str(n + 1) )
+		rec_vid_node.visible = true
 		var rec_vid = GameManager.cur_watches[n]
 		#print(rec_vid.title)
 		#print(rec_vid.user)
@@ -32,6 +35,10 @@ func set_up():
 		if (texture != null ):
 			print(rec_vid.thumbnail_fname)
 			image.texture = texture
+	
+	for n in range(num_videos, 6):
+		var rec_vid_node = get_node("Video" + str(n + 1) )
+		rec_vid_node.visible = false
 
 
 # when button pressed 

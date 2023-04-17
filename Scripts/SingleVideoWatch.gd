@@ -11,41 +11,40 @@ var thumbnail_path = "res://VideoThumbnails/"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#print( videos[0].title)
-	#var cur_vid = RecVideos.cur_video
-	#print(cur_vid.title)
+
 	set_up()
 	var videoplayer = get_node("VideoPlayer")
 	videoplayer.stop()
 	pass # Replace with function body.
 
 func set_up():
-	var cur_vid = GameManager.cur_watches[0]
-	var videoplayer = get_node("VideoPlayer")
-	#print(video_path + cur_vid.video_fname)
-	videoplayer.stream = cur_vid.load_vidstream()
-	videoplayer.paused = false
-	videoplayer.play()
-	var title = get_node("Title")
-	title.set_text(cur_vid.title)
-	var user = get_node("User")
-	user.set_text(cur_vid.user)
-	var desc = get_node("Description")
-	desc.set_text(cur_vid.desc)
-	
-	for n in range(1,num_videos):
-		var rec_vid_node = get_node("Video" + str(n))
+	if len(GameManager.cur_watches) > 0:
+		var cur_vid = GameManager.cur_watches[0]
+		var videoplayer = get_node("VideoPlayer")
+
+		videoplayer.stream = cur_vid.load_vidstream()
+		videoplayer.paused = false
+		videoplayer.play()
+		var title = get_node("Title")
+		title.set_text(cur_vid.title)
+		var user = get_node("User")
+		user.set_text(cur_vid.user)
+		var desc = get_node("Description")
+		desc.set_text(cur_vid.desc)
 		
-		var rec_vid = GameManager.cur_watches[n]
-		#print(rec_vid.title)
-		#print(rec_vid.user)
-		#print(rec_vid.thumbnail_fname)
-		rec_vid_node.get_node("Title").set_text(rec_vid.title)
-		rec_vid_node.get_node("User").set_text(rec_vid.user)
-		var image = rec_vid_node.get_node("TextureRect")
-		var texture = load( thumbnail_path + rec_vid.thumbnail_fname )
-		if (texture != null ):
-			image.texture = texture
+		for n in range(1,num_videos):
+			var rec_vid_node = get_node("Video" + str(n))
+			
+			var rec_vid = GameManager.cur_watches[n]
+			#print(rec_vid.title)
+			#print(rec_vid.user)
+			#print(rec_vid.thumbnail_fname)
+			rec_vid_node.get_node("Title").set_text(rec_vid.title)
+			rec_vid_node.get_node("User").set_text(rec_vid.user)
+			var image = rec_vid_node.get_node("TextureRect")
+			var texture = load( thumbnail_path + rec_vid.thumbnail_fname )
+			if (texture != null ):
+				image.texture = texture
 
 func set_video_current(index):
 	#print("setting to index: " + str(index))
