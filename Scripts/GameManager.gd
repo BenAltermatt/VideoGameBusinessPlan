@@ -1,13 +1,7 @@
 extends Node
 
-# const vars
-
 const MAX_ACTIONS = 5
 const USERNAME = "player"
-
-# variables that determine what category the next action is in
-enum action {UPLOAD, WATCH, COMMENT}
-
 
 # Threshold values
 var curDay = 0				# current day in the game, cannot go below 0 or exceeed MAX_DAYS
@@ -21,17 +15,25 @@ var Comment = load("res://Scripts/Comment.gd")
 var YTVideo = load("res://Scripts/Video.gd")
 var Loader = load("res://Scripts/ReadObjects.gd")
 
+# these are all of the values we can eventually serve.
+# all are read in from files ahead of time and selected from when
+# their criteria for display are met
 var All_Comments = []
 var All_Uploads = []
 var All_Watches = []
 var All_Convos = {}
+var All_Events = {}
 
-# these are the videos we decided to serve on this given day
+# these are the elements to be served on this given day
 var cur_uploads = []
 var cur_comments = [] 
 var cur_watches = []
-var cur_convos = {}
 
+# convos are only added to over time, but they can be updated
+# daily. We also keep track of whether they have been recently
+# updated or not.
+var cur_convos = {}
+var update_convos = {} 
 
 # This is all stuff ripped from Rio's singleton. We need to be able to reload videos depending
 # on the day, so we can't use her singleton anymore.
@@ -57,22 +59,59 @@ func update_prog(changes):
 # eventually, this will require updating with some kind of interesting logic
 # about selecting relevant portions of the story
 
+# show upload options from the current week on this current timeline
 func _serve_uploads():
-	cur_uploads = All_Uploads
+	cur_uploads = []
 	
-func _serve_watches():
-	cur_watches = All_Watches
-	
-func _serve_comments():
-	cur_comments = All_Comments
+	for upload in All_Uploads:
+		if upload.sl == cur_sl and upload.time_thresh == curDay:
+			cur_uploads.append(upload)
 
+# show watch options from the current weeek on this current timeline
+func _serve_watches():
+	cur_watches = []
+	
+	for watch in All_Watches:
+		if watch.sl == cur_sl and watch.time_thresh == curDay:
+			cur_watches.append(watch)
+
+# show the comments from the current week on this current timeline
+func _serve_comments():
+	cur_comments = []
+	
+	for comment in All_Comments:
+		if comment.sl_tag == cur_sl and comment.day_thresh == curDay:
+			cur_comments.append(comment)
+
+# add the appropriate messages from the current weeek on this current timeline
 func _serve_convos():
-	for sl in All_Convos:
-		for convo in All_Convos[sl]:
-			if cur_convos.has(convo.username):
-				cur_convos[convo.username].append([true, convo])
-			else:
-				cur_convos[convo.username] = [[true, convo]]
+	if All_Convos.has(cur_sl):
+		for convo in All_Convos[cur_sl]:
+			if convo.day == curDay:
+				if cur_convos.has(convo.username):
+					cur_convos[convo.username].append([true, convo])
+				else:
+					cur_convos[convo.username] = [[true, convo]]
+	else:
+		cur_convos = {}
+
+# scan events on thsi timeline. If there is an event today, update the timeline.
+func _register_event():
+	var new_sl = ""
+	var max_points = -INF
+	
+	for event in All_Events[cur_sl]:
+		if event.time == curDay:
+			for new_sl_opt in event.new_sls:
+				var cur_points = 0
+				if sl_vals.has(new_sl_opt):
+					cur_points = sl_vals[new_sl_opt]
+					
+				if cur_points > max_points:
+					new_sl = new_sl_opt
+					max_points = cur_points
+	
+	cur_sl = new_sl
 
 # check variables at the start of a new day
 func newDay():
@@ -81,6 +120,9 @@ func newDay():
 	
 	# increment the current time frame by one
 	curDay += 1
+	
+	# we have to properly update the storyline
+	_register_event()
 	
 	# update the servings for the day
 	_serve_uploads()
@@ -102,7 +144,7 @@ func _ready():
 	var All_Vids = Loader.read_in_videos()
 	All_Comments = Loader.read_in_comments()
 	All_Convos = Loader.read_in_messages()
-
+	All_Events = Loader.read_in_events()
 	
 	# now is a good time to separate our videos
 	# into our videos and not our videos
@@ -112,6 +154,5 @@ func _ready():
 		#else: # we have this here for debugging rn
 		All_Uploads.append(video)
 		
-	
 			
 	newDay() # set up the first day
