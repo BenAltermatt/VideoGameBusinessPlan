@@ -9,7 +9,7 @@ var to_player : bool = false
 func _init(block=null):
 	assert(block != null)
 	
-	var arg_str : String = block.substr(0, block.find(":") - 1)
+	var arg_str : String = block.substr(0, block.find(":"))
 	var args = arg_str.split(",")
 	
 	day = int(args[0].strip_edges())

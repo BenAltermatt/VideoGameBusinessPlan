@@ -1,10 +1,6 @@
 extends TabContainer
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
+var MessageAlert : ImageTexture
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,13 +15,17 @@ func _ready():
 	image.load("res://icons/youtube-creator-icon.png")
 	texture.create_from_image(image)
 	set_tab_icon(1, texture)
-	pass # Replace with function body.
+
+	MessageAlert = ImageTexture.new()
+	image = Image.new()
+	image.load("res://icons/unr_msg.png")
+	MessageAlert.create_from_image(image)
+	$Messages.connect("update_content", self, "content_updated")
+	set_tab_icon(2, MessageAlert)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
-func _on_PowerButton_pressed():
-	pass # Replace with function body.
+func content_updated(new):
+	if new:
+		set_tab_icon(2, MessageAlert)
+	else:
+		set_tab_icon(2, null)
