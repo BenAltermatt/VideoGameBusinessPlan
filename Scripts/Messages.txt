@@ -4,5 +4,49 @@ can be sent to the manager.;
 player.;
 2, main, HEHEHHA, true : Two of these messages can be sent to the player at once, this should be the 
 second within this day. We should laso be able to include new lines.;
-1, other, AHHHH, true: This is an example of a message that might show up for the player on a day
+1, other, AHHHH, true : This is an example of a message that might show up for the player on a day
 in which they are not working.;
+1, other, YOU, false: A message from me this time. 
+Ya goofball.;
+1, other, YOU, false: A message from me this time. 
+Ya goofball.;
+1, other, YOU, false: A message from me this time. 
+Ya goofball.;
+1, other, YOU, false: A message from me this time. 
+Ya goofball.;
+1, other, YOU, false: A message from me this time. 
+Ya goofball.;
+1, other, YOU, false: A message from me this time. 
+Ya goofball.;
+1, other, YOU, false: A message from me this time. 
+Ya goofball.;
+1, other, YOU, false: A message from me this time. 
+Ya goofball.;
+1, other, YOU, false: A message from me this time. 
+Ya goofball.;
+1, other, YOU, false: A message from me this time. 
+Ya goofball.;
+1, other, YOU, false: A message from me this time. 
+Ya goofball.;
+1, other, YOU, false: A message from me this time. 
+Ya goofball.;
+1, other, YOU, false: A message from me this time. 
+Ya goofball.;
+1, other, YOU, false: A message from me this time. 
+Ya goofball.;
+1, other, YOU, false: A message from me this time. 
+Ya goofball.;
+1, other, YOU, false: A message from me this time. 
+Ya goofball.;
+1, other, YOU, false: A message from me this time. 
+Ya goofball.;
+1, other, YOU, false: A message from me this time. 
+Ya goofball.;
+1, other, YOU, false: A message from me this time. 
+Ya goofball.;
+1, other, YOU, false: A message from me this time. 
+Ya goofball.;
+1, other, YOU, false: A message from me this time. 
+Ya goofball.;
+1, other, YOU, false: A message from me this time. 
+Ya goofball.;

@@ -24,11 +24,13 @@ var Loader = load("res://Scripts/ReadObjects.gd")
 var All_Comments = []
 var All_Uploads = []
 var All_Watches = []
+var All_Convos = {}
 
 # these are the videos we decided to serve on this given day
 var cur_uploads = []
 var cur_comments = [] 
 var cur_watches = []
+var cur_convos = {}
 
 
 # This is all stuff ripped from Rio's singleton. We need to be able to reload videos depending
@@ -64,6 +66,14 @@ func _serve_watches():
 func _serve_comments():
 	cur_comments = All_Comments
 
+func _serve_convos():
+	for sl in All_Convos:
+		for convo in All_Convos[sl]:
+			if cur_convos.has(convo.username):
+				cur_convos[convo.username].append([true, convo])
+			else:
+				cur_convos[convo.username] = [[true, convo]]
+
 # check variables at the start of a new day
 func newDay():
 	# change to transition scene
@@ -76,6 +86,7 @@ func newDay():
 	_serve_uploads()
 	_serve_watches()
 	_serve_comments()
+	_serve_convos()
 	
 	# reset our tracker for a valid end of day segment
 	uploaded = false
@@ -90,6 +101,8 @@ func _ready():
 	# we need to load in our total videos and comments
 	var All_Vids = Loader.read_in_videos()
 	All_Comments = Loader.read_in_comments()
+	All_Convos = Loader.read_in_messages()
+
 	
 	# now is a good time to separate our videos
 	# into our videos and not our videos
@@ -98,5 +111,7 @@ func _ready():
 			All_Watches.append(video)
 		#else: # we have this here for debugging rn
 		All_Uploads.append(video)
+		
+	
 			
 	newDay() # set up the first day
