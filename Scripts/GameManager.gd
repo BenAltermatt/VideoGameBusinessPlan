@@ -85,13 +85,16 @@ func _serve_comments():
 
 # add the appropriate messages from the current weeek on this current timeline
 func _serve_convos():
+	print("what is going on")
+	
 	if All_Convos.has(cur_sl):
 		for convo in All_Convos[cur_sl]:
 			if convo.day == curDay:
+				update_convos[convo.username] = true
 				if cur_convos.has(convo.username):
-					cur_convos[convo.username].append([true, convo])
+					cur_convos[convo.username].append(convo)
 				else:
-					cur_convos[convo.username] = [[true, convo]]
+					cur_convos[convo.username] = [convo]
 	else:
 		cur_convos = {}
 
@@ -110,8 +113,8 @@ func _register_event():
 				if cur_points > max_points:
 					new_sl = new_sl_opt
 					max_points = cur_points
-	
-	cur_sl = new_sl
+					
+			cur_sl = new_sl
 
 # check variables at the start of a new day
 func newDay():

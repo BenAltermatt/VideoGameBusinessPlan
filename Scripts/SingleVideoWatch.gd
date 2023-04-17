@@ -11,7 +11,7 @@ var thumbnail_path = "res://VideoThumbnails/"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-
+	num_videos = min(6, len(GameManager.cur_watches))
 	set_up()
 	var videoplayer = get_node("VideoPlayer")
 	videoplayer.stop()
@@ -34,17 +34,19 @@ func set_up():
 		
 		for n in range(1,num_videos):
 			var rec_vid_node = get_node("Video" + str(n))
+			rec_vid_node.visible = true
 			
 			var rec_vid = GameManager.cur_watches[n]
-			#print(rec_vid.title)
-			#print(rec_vid.user)
-			#print(rec_vid.thumbnail_fname)
 			rec_vid_node.get_node("Title").set_text(rec_vid.title)
 			rec_vid_node.get_node("User").set_text(rec_vid.user)
 			var image = rec_vid_node.get_node("TextureRect")
 			var texture = load( thumbnail_path + rec_vid.thumbnail_fname )
 			if (texture != null ):
 				image.texture = texture
+		
+		for n in range(num_videos, 6):
+			var rec_vid_node = get_node("Video" + str(n))
+			rec_vid_node.visible = false
 
 func set_video_current(index):
 	#print("setting to index: " + str(index))

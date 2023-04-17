@@ -43,3 +43,11 @@
 - tfile : "gobwin.jpeg"
 - change : (good = 10, bad = -10)
 ;
+
+(2, main) "nooooooooooo i'm jus a widdle gobwin"
+- User : "Aleks Le"
+- Desc : "no comment, just a widdle gobwin 😌 original post: https://twitter.com/leyawn/status/130... https://twitter.com/AleksLeVO https:/www.instagram.com/aleksle.vo/ https://www.twitch.tv/alekslevo"
+- vfile : "gobwin.webm"
+- tfile : "gobwin.jpeg"
+- change : (good = 10, bad = -10)
+;
