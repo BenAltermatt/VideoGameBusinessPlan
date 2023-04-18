@@ -133,7 +133,7 @@ func newDay():
 	_serve_convos()
 	
 	# reset our tracker for a valid end of day segment
-	uploaded = true
+	uploaded = false
 	yield(get_tree().create_timer(1.5), "timeout")
 
 	# get back to the basic website scene

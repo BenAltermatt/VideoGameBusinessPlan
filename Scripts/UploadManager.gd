@@ -33,9 +33,13 @@ func _uploadClicked():
 	if _selectedVideo == null:
 		print("No video selected.")
 		return
-	#print("Uploading video: " + _selectedVideo.title)
-	GameManager.update_prog(_selectedVideo.changes)
-	GameManager.uploaded = true
+
+	if not GameManager.uploaded:
+		GameManager.update_prog(_selectedVideo.changes)
+		GameManager.uploaded = true
+	else:
+		$PopupDialog.popup()
+		
 
 func loadVideosFromFolder(path: String) -> Array:
 	var dir = Directory.new()

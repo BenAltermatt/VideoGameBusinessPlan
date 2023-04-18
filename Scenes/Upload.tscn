@@ -100,3 +100,19 @@ Please be sure not to violate others' copyright or privacy rights. Learn more "
 align = 1
 valign = 1
 autowrap = true
+
+[node name="PopupDialog" type="PopupDialog" parent="."]
+visible = true
+anchor_left = 0.412
+anchor_top = 0.4
+anchor_right = 0.542
+anchor_bottom = 0.433
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PopupDialog"]
+anchor_right = 0.8
+anchor_bottom = 1.0
+margin_right = 40.0
+margin_bottom = 40.0
+text = "I don't think I should upload two versions of the same video."
