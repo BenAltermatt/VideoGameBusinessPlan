@@ -95,8 +95,6 @@ func _serve_convos():
 					cur_convos[convo.username].append(convo)
 				else:
 					cur_convos[convo.username] = [convo]
-	else:
-		cur_convos = {}
 
 # scan events on thsi timeline. If there is an event today, update the timeline.
 func _register_event():
