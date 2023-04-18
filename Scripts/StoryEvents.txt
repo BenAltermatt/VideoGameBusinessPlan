@@ -1,13 +1,1 @@
-7, main : good, bad, neutral;
-7, main : good, bad, neutral;
-7, main : good, bad, neutral;
-7, main : good, bad, neutral;
-7, main : good, bad, neutral;
-7, main : good, bad, neutral;
-7, main : good, bad, neutral;
-7, main : good, bad, neutral;
-7, main : good, bad, neutral;
-7, main : good, bad, neutral;
-7, main : good, bad, neutral;
-7, main : good, bad, neutral;
-7, main : good, bad, neutral;
+8, main : good, bad

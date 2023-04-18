@@ -1,7 +1,7 @@
 extends Node
 
 const MAX_ACTIONS = 5
-const USERNAME = "player"
+const USERNAME = "AubreyIRL"
 
 # Threshold values
 var curDay = 0				# current day in the game, cannot go below 0 or exceeed MAX_DAYS
@@ -103,18 +103,19 @@ func _register_event():
 	var new_sl = ""
 	var max_points = -INF
 	
-	for event in All_Events[cur_sl]:
-		if event.time == curDay:
-			for new_sl_opt in event.new_sls:
-				var cur_points = 0
-				if sl_vals.has(new_sl_opt):
-					cur_points = sl_vals[new_sl_opt]
-					
-				if cur_points > max_points:
-					new_sl = new_sl_opt
-					max_points = cur_points
-					
-			cur_sl = new_sl
+	if All_Events.has(cur_sl):
+		for event in All_Events[cur_sl]:
+			if event.time == curDay:
+				for new_sl_opt in event.new_sls:
+					var cur_points = 0
+					if sl_vals.has(new_sl_opt):
+						cur_points = sl_vals[new_sl_opt]
+						
+					if cur_points > max_points:
+						new_sl = new_sl_opt
+						max_points = cur_points
+						
+				cur_sl = new_sl
 
 # check variables at the start of a new day
 func newDay():
@@ -134,7 +135,7 @@ func newDay():
 	_serve_convos()
 	
 	# reset our tracker for a valid end of day segment
-	uploaded = false
+	uploaded = true
 	yield(get_tree().create_timer(1.5), "timeout")
 
 	# get back to the basic website scene
