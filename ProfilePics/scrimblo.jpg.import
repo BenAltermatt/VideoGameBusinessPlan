@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Stallin.jpg-0fd476f77f4478f563198439398625e5.stex"
+path="res://.import/scrimblo.jpg-095cb5e62e0920159e6d97d0fa07866b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ProfilePics/Stallin.jpg"
-dest_files=[ "res://.import/Stallin.jpg-0fd476f77f4478f563198439398625e5.stex" ]
+source_file="res://ProfilePics/scrimblo.jpg"
+dest_files=[ "res://.import/scrimblo.jpg-095cb5e62e0920159e6d97d0fa07866b.stex" ]
 
 [params]
 

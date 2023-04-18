@@ -63,7 +63,7 @@ func _read_comm(top_line:String):
 # these should have a preluding - in front of them
 func _read_attr(body_line:String):
 	# cut off the dash	
-	var line_cont = body_line.substr(body_line.find("-") + 1)
+	var line_cont = body_line#.substr(body_line.find("-") + 1) 
 
 	var substrs = line_cont.split(":")
 	
