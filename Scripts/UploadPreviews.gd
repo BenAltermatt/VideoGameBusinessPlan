@@ -29,7 +29,7 @@ func set_up():
 			rec_vid_node.visible = true
 			
 			var rec_vid = uploads[n]
-			rec_vid_node.get_node("Title").set_text(rec_vid.title)
+			rec_vid_node.get_node("Title").set_text(rec_vid.video_fname)
 			rec_vid_node.get_node("User").set_text(rec_vid.user)
 			var image = rec_vid_node.get_node("TextureRect")
 			var texture = load( thumbnail_path + rec_vid.thumbnail_fname )

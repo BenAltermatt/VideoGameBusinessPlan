@@ -11,7 +11,7 @@ func _ready():
 	changed = false
 	s_day = GameManager.curDay
 	
-	get_node("ColorRect/RichTextLabel").text = ("Day %d" % (s_day - 1))
+	get_node("ColorRect/RichTextLabel").text = ("Week %d" % (s_day - 1))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,6 +19,6 @@ func _process(delta):
 	elapsed += delta
 	
 	if elapsed > 1 and not changed:
-		get_node("ColorRect/RichTextLabel").text = ("Day %d" % s_day)
+		get_node("ColorRect/RichTextLabel").text = ("Week %d" % s_day)
 		changed = true
 	

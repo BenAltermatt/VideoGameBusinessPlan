@@ -153,8 +153,8 @@ func _ready():
 	for video in All_Vids:
 		if video.user != USERNAME: 
 			All_Watches.append(video)
-		#else: # we have this here for debugging rn
-		All_Uploads.append(video)
+		else: 
+			All_Uploads.append(video)
 		
 			
 	newDay() # set up the first day
