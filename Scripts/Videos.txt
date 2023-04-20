@@ -499,3 +499,18 @@
 - tfile : "week7.png"
 - change : (good = 0, bad = 30)
 ;
+
+(8, good) "My Stalker Get's Arrested"
+- User : "AubreyIRL"
+- Desc : "You guys may have heard about the stalker issue that I've been dealing with. This is the resolution!"
+- vfile : "Week8_GoodEnd.webm"
+- tfile : "Week8_GoodEnd.png"
+- change : (good = 0)
+;
+
+(8, bad) "Channel Update"
+- User : "AubreyIRL"
+- Desc : ""
+- vfile : "Week8_BadEnd.webm"
+- tfile : "Week8_BadEnd.png"
+- change : (good = 0)

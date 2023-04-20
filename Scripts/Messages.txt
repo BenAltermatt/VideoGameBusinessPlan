@@ -9,6 +9,6 @@
 5, main, AubreyIRL, true: Hey Maddie and I recorded a collab this week. I think they all turned out good so feel free to pick whichever video you think best to upload!;
 5, main, AkiyamaFan, true: I liked the video this week, cuz i love all your videos! But i like it more when it’s just you in the video….;
 6, main, AubreyIRL, true: Great job managing the channel and thank you for responding to the comments too, you are doing a great job!;
-6, main, HimenoStan, true: Do you really have a boyfriend? He’s never been in any of your videos before;
+7, main, HimenoStan, true: Do you really have a boyfriend? He’s never been in any of your videos before;
 7, main, AubreyIRL, true: Hey somebody scary came up to me while I was recording this week and it really freaked me out so I have decided I need to take a break for a while. I sent you a few videos where I explain why I’m taking a break for you to choose from. Thank you for responding to the comments for me, some of these people are wild.;
-7, main, AkiyamaFan, true: I’m so happy you ended up talking about me in your video! But I’m sad you think that I am stalking you :( I thought we had more than that. If you really leave Youtube, I guess I’ll have to take matters into my own hands… so let’s not have it come to that!;
+8, main, AkiyamaFan, true: I’m so happy you ended up talking about me in your video! But I’m sad you think that I am stalking you :( I thought we had more than that. If you really leave Youtube, I guess I’ll have to take matters into my own hands… so let’s not have it come to that!;
