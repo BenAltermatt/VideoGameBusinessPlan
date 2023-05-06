@@ -28,7 +28,7 @@ For reasons covered in the [Technical Difficulties](#technical-difficulties) por
 ![This is what it should look like when importing a project into Godot](./import.png)
 
 7. Now we should have the project open. The only remaining step is to click the `play button` in the top-right row of buttons on the window. This will run our game. Enjoy!
-![This is the top right screen of the editor with a play button](./play)
+![This is the top right screen of the editor with a play button](./play.png)
 
 
 
