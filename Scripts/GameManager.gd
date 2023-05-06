@@ -88,8 +88,6 @@ func _serve_comments():
 
 # add the appropriate messages from the current weeek on this current timeline
 func _serve_convos():
-	print("what is going on")
-	
 	if All_Convos.has(cur_sl):
 		for convo in All_Convos[cur_sl]:
 			if convo.day == curDay:

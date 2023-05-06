@@ -1,4 +1,3 @@
-tool
 extends EditorScript
 
 # it should be noted that these files cannot have semicolons or newlines within content of comments
@@ -79,10 +78,4 @@ static func read_in_messages():
 				messages[message.sl] = [message]
 				
 	return messages
-	
-func _run():
-	var messages = read_in_messages()
-	for key in messages:
-		for ev in messages[key]:
-			ev.print_message()
 
