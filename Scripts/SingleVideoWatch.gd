@@ -1,9 +1,5 @@
 extends Control
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var num_videos = 6
 var video_path = "res://VideoFiles/"
 var thumbnail_path = "res://VideoThumbnails/"

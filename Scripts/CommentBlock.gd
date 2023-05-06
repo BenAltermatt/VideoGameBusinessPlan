@@ -1,9 +1,5 @@
 extends Node
 
-
-# Declare member frdrrrrrvariables here. Examples:
-# var a = 2
-# var b = "text"
 const COMMENT_OBJECT_PATH = "res://Scripts/Comment.gd"
 
 signal reply_intent(index)
