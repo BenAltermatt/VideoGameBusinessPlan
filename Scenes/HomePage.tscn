@@ -9,7 +9,7 @@
 [ext_resource path="res://ButtonPNGs/SubsMenuButton.png" type="Texture" id=7]
 [ext_resource path="res://ButtonPNGs/SideMenu.png" type="Texture" id=8]
 [ext_resource path="res://ButtonPNGs/ExploreMenu.png" type="Texture" id=9]
-[ext_resource path="res://Scenes/HomePage.gd" type="Script" id=10]
+[ext_resource path="res://Scripts/HomePage.gd" type="Script" id=10]
 [ext_resource path="res://Scenes/VideoMedium.tscn" type="PackedScene" id=22]
 
 [sub_resource type="StreamTexture" id=1]
