@@ -49,7 +49,11 @@ func set_up():
 			rec_vid_node.visible = false
 
 func set_video_current(index):
-	#print("setting to index: " + str(index))
+	
+	if GameManager.num_watched > GameManager.MAX_WATCH:
+		$PopupDialog.popup()
+		return
+	
 	GameManager.cur_video = GameManager.cur_watches[index]
 	
 	# when this happens, the video changes should be submitted to the game manager
@@ -65,55 +69,41 @@ func set_video_current(index):
 	GameManager.cur_watches = shuffledList
 	for i in range(len(GameManager.cur_watches)):
 		if GameManager.cur_watches[i] == GameManager.cur_video:
-			#print( "found old index!")
 			var temp = GameManager.cur_watches[0]
 			GameManager.cur_watches[0] = GameManager.cur_video
 			GameManager.cur_watches[i] = temp
-	
-	#for i in range(videos.size()):
-	#	print(videos[i].title)
-	
-	#print(RecVideos.cur_video)
+			
 	set_up()
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 func _on_Youtube_pressed():
 	self.hide()
 	GameManager.single_vid = false
 	GameManager.multiple_vid = true
-	pass 
 
 
 func _on_Button1_pressed():
-	#print("Video 1 pressed!")
+	GameManager.num_watched += 1
 	set_video_current(1)
-	pass 
 
 
 func _on_Button2_pressed():
-	#print("Video 2 pressed!")
+	GameManager.num_watched += 1
 	set_video_current(2)
-	pass # Replace with function body.
 
 
 func _on_Button3_pressed():
-	#print("Video 3 pressed!")
+	GameManager.num_watched += 1
 	set_video_current(3)
-	pass # Replace with function body.
 
 
 func _on_Button4_pressed():
-	#print("Video 4 pressed!")
+	GameManager.num_watched += 1
 	set_video_current(4)
-	pass # Replace with function body.
 	
 	
 func _on_Button5_pressed():
-	#print("Video 5 pressed!")
+	GameManager.num_watched += 1
 	set_video_current(5)
-	pass # Replace with function body.
+
 
 

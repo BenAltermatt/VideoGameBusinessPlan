@@ -43,17 +43,13 @@ func set_up():
 
 # when button pressed 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
 func open_single_view(index):
-	#var SINGLE_VID_PATH = "res://Scripts/SingleVideoWatch.gd"
-	#var singleVid = load(SINGLE_VID_PATH).new()
-	GameManager.single_vid = true
-	GameManager.cur_vid_index = index
-	#singleVid.set_video_current(index)
-	
+	if GameManager.num_watched < GameManager.MAX_WATCH:
+		GameManager.num_watched += 1
+		GameManager.single_vid = true
+		GameManager.cur_vid_index = index
+	else:
+		$PopupDialog.popup()
 	
 
 func _on_Button1_pressed():

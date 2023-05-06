@@ -1,6 +1,7 @@
 extends Node
 
-const MAX_ACTIONS = 5
+const MAX_WATCH = 3
+const MAX_RESPOND = 2
 const USERNAME = "AubreyIRL"
 
 # Threshold values
@@ -9,6 +10,8 @@ var cur_sl = "main"			# this is the current branch in the game
 var sl_vals = {} 			# this will track the progression of a value towards an ending 
 
 var uploaded = false # this is the minimum requirement to end the day
+var num_watched = 0
+var num_responded = 0
 
 # Serving values
 var Comment = load("res://Scripts/Comment.gd")
@@ -122,6 +125,10 @@ func newDay():
 	
 	# increment the current time frame by one
 	curDay += 1
+	
+	# reset our action counters
+	num_watched = 0
+	num_responded = 0
 	
 	# we have to properly update the storyline
 	_register_event()
