@@ -30,7 +30,7 @@ For reasons covered in the [Technical Difficulties](#technical-difficulties) por
 7. Now we should have the project open. The only remaining step is to click the `play button` in the top-right row of buttons on the window. This will run our game. Enjoy!
 ![This is the top right screen of the editor with a play button](./play.png)
 
-
+8. Just a heads up!! If there are any technical difficulties playing the game from the zip file, consider just using the forked repo.
 
 
 ## Technical Difficulties
