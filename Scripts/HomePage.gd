@@ -1,9 +1,6 @@
 extends Control
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var videos = GameManager.cur_watches
 var num_videos = 6
 var video_path = "res://VideoFiles/"
@@ -28,7 +25,6 @@ func set_up():
 		var image = rec_vid_node.get_node("Thumbnail")
 		var texture = load( thumbnail_path + rec_vid.thumbnail_fname )
 		if (texture != null ):
-			print(rec_vid.thumbnail_fname)
 			image.texture = texture
 	
 	for n in range(num_videos, 6):
