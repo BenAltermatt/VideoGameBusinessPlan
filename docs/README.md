@@ -10,7 +10,6 @@ Hello! This is our project for our Spring 2023 Creative Computing Capstone.
 ## Running Instructions
 For reasons covered in the [Technical Difficulties](#technical-difficulties) portion, we cannot build this project into an HTML5 project, meaning, to run our project, you will have to download a version of Godot and import it. Please follow along!
 
-### 1. Downloading Godot
 1. Please navigate to the Godot webpage listed [here](https://godotengine.org/). You should see a screen that gives you download options depending on your machine. Our current project was created in **Godotv3.5.2**, meaning we will look to install that. As of Spring 2023, this can be found by downloading the current Long Term Support (LTS) version. Refer to the image below to make sure you're in the right place:
 ![Godot Engine Website Homescreen. There's a Latest and LTS option for engines](./godot_engine_homescreen.png)
 
@@ -22,7 +21,7 @@ For reasons covered in the [Technical Difficulties](#technical-difficulties) por
 4. Now, run the executable. You should get a screen like shown below. This is known as the project manager. We are going to try and import a project here after we get it.
 ![This is a blank project manager screen.](./project_manager.png)
 
-5. Now, we need to get our project. Please clone this repository if you like, or, if you prefer, download the zip file at the base level of the repository and unzip it whereever you prefer.
+5. Now, we need to get our project. You can clone this repository if you like, or you can download the zip posted at [this link](https://drive.google.com/file/d/18zIdZnIgsIxzWpSJaZFriQCwBsBoNgKm/view?usp=sharing)
 
 6. Now that you have the contents of the repository, you are going to want to go back to your instance of the Godot Editor, and click `import`. We are going to specify the path to the `project.godot` file, which should be the child of the parent directory of our unzipped our cloned repo. Click `open` and then `Import&Edit`.
 ![This is what it should look like when importing a project into Godot](./import.png)
