@@ -44,6 +44,30 @@
 - change : (good = 0, bad = 0)
 ;
 
+(1, main) "New IRL Channel!"
+- User : "AubreyIRL"
+- Desc : "I started a new IRL channel! I hope you all enjoy!"
+- vfile : "Week1_1.webm"
+- tfile : "week1.png"
+- change : (good = 30, bad = 0)
+;
+
+(1, main) "New IRL Channel!"
+- User : "AubreyIRL"
+- Desc : "I started a new IRL channel! I hope you all enjoy!"
+- vfile : "Week1_2.webm"
+- tfile : "week1.png"
+- change : (good = 15, bad = 15)
+;
+
+(1, main) "New IRL Channel!"
+- User : "AubreyIRL"
+- Desc : "I started a new IRL channel! I hope you all enjoy!"
+- vfile : "Week1_3.webm"
+- tfile : "week1.png"
+- change : (good = 0, bad = 30)
+;
+
 (2, main) "nooooooooooo i'm jus a widdle gobwin"
 - User : "Aleks Le"
 - Desc : "no comment, just a widdle gobwin 😌 original post: https://twitter.com/leyawn/status/130... https://twitter.com/AleksLeVO https:/www.instagram.com/aleksle.vo/ https://www.twitch.tv/alekslevo"
@@ -90,6 +114,30 @@
 - vfile : "career.webm"
 - tfile : "career.jpeg"
 - change : (good = 0, bad = 0)
+;
+
+(2, main) "Day in My Life!"
+- User : "AubreyIRL"
+- Desc : "In this video, I show you how I usually go about my day!"
+- vfile : "Week2_1.webm"
+- tfile : "week2.png"
+- change : (good = 30, bad = 0)
+;
+
+(2, main) "Day in My Life!"
+- User : "AubreyIRL"
+- Desc : "In this video, I show you how I usually go about my day!"
+- vfile : "Week2_2.webm"
+- tfile : "week2.png"
+- change : (good = 15, bad = 15)
+;
+
+(2, main) "Day in My Life!"
+- User : "AubreyIRL"
+- Desc : "In this video, I show you how I usually go about my day!"
+- vfile : "Week2_3.webm"
+- tfile : "week2.png"
+- change : (good = 0, bad = 30)
 ;
 
 (3, main) "I DON'T WANT A CAREER"
@@ -140,6 +188,30 @@
 - change : (good = 0, bad = 0)
 ;
 
+(3, main) "What a beautiful day!"
+- User : "AubreyIRL"
+- Desc : "Today was such a beautiful day, it would be a shame not to show you!"
+- vfile : "Week3_1.webm"
+- tfile : "week3.png"
+- change : (good = 30, bad = 0)
+;
+
+(3, main) "What a beautiful day!"
+- User : "AubreyIRL"
+- Desc : "Today was such a beautiful day, it would be a shame not to show you!"
+- vfile : "Week3_2.webm"
+- tfile : "week3.png"
+- change : (good = 15, bad = 15)
+;
+
+(3, main) "What a beautiful day!"
+- User : "AubreyIRL"
+- Desc : "Today was such a beautiful day, it would be a shame not to show you!"
+- vfile : "Week3_3.webm"
+- tfile : "week3.png"
+- change : (good = 0, bad = 30)
+;
+
 (4, main) "Awesome day with my BFF!"
 - User : "AkiyamaFan"
 - Desc : "Just recounting an awesome day I had recently :)"
@@ -186,6 +258,30 @@
 - vfile : "botw.webm"
 - tfile : "botw.jpeg"
 - change : (good = 0, bad = 0)
+;
+
+(4, main) "Get Ready with Me!"
+- User : "AubreyIRL"
+- Desc : "Get ready with me for a regular day out!"
+- vfile : "Week4_1.webm"
+- tfile : "week4.png"
+- change : (good = 30, bad = 0)
+;
+
+(4, main) "Get Ready with Me!"
+- User : "AubreyIRL"
+- Desc : "Get ready with me for a regular day out!"
+- vfile : "Week4_2.webm"
+- tfile : "week4.png"
+- change : (good = 15, bad = 15)
+;
+
+(4, main) "Get Ready with Me!"
+- User : "AubreyIRL"
+- Desc : "Get ready with me for a regular day out!"
+- vfile : "Week4_3.webm"
+- tfile : "week4.png"
+- change : (good = 0, bad = 30)
 ;
 
 (5, main) "Lego Helicopter WIP"
@@ -236,6 +332,30 @@
 - change : (good = 0, bad = 0)
 ;
 
+(5, main) "Headphone Challenge with my friend!"
+- User : "AubreyIRL"
+- Desc : "Today my friend and I played the headphone challenge! It went about as well as you can expect XD"
+- vfile : "Week5_1.webm"
+- tfile : "week5.png"
+- change : (good = 30, bad = 0)
+;
+
+(5, main) "Headphone Challenge with my friend!"
+- User : "AubreyIRL"
+- Desc : "Today my friend and I played the headphone challenge! It went about as well as you can expect XD"
+- vfile : "Week5_2.webm"
+- tfile : "week5.png"
+- change : (good = 15, bad = 15)
+;
+
+(5, main) "Headphone Challenge with my friend!"
+- User : "AubreyIRL"
+- Desc : "Today my friend and I played the headphone challenge! It went about as well as you can expect XD"
+- vfile : "Week5_3.webm"
+- tfile : "week5.png"
+- change : (good = 0, bad = 30)
+;
+
 (6, main) "Phone call with Mom!"
 - User : "AkiyamaFan"
 - Desc : "She seems a little worried today, but I know it will turn out okay :)"
@@ -282,6 +402,30 @@
 - vfile : "career.webm"
 - tfile : "career.jpeg"
 - change : (good = 0, bad = 0)
+;
+
+(6, main) "Making Taiwanese Cucumber Salad!"
+- User : "AubreyIRL"
+- Desc : "Today I made some cucumber salad! It was very refreshing and tasty!"
+- vfile : "Week6_1.webm"
+- tfile : "week6.png"
+- change : (good = 30, bad = 0)
+;
+
+(6, main) "Making Taiwanese Cucumber Salad!"
+- User : "AubreyIRL"
+- Desc : "Today I made some cucumber salad! It was very refreshing and tasty!"
+- vfile : "Week6_2.webm"
+- tfile : "week6.png"
+- change : (good = 15, bad = 15)
+;
+
+(6, main) "Making Taiwanese Cucumber Salad!"
+- User : "AubreyIRL"
+- Desc : "Today I made some cucumber salad! It was very refreshing and tasty!"
+- vfile : "Week6_3.webm"
+- tfile : "week6.png"
+- change : (good = 0, bad = 30)
 ;
 
 (7, main) " "
@@ -331,3 +475,42 @@
 - tfile : "vtuber.jpeg"
 - change : (good = 0, bad = 0)
 ;
+
+(7, main) "Taking a break"
+- User : "AubreyIRL"
+- Desc : "Short update video"
+- vfile : "Week7_1.webm"
+- tfile : "week7.png"
+- change : (good = 30, bad = 0)
+;
+
+(7, main) "Taking a break"
+- User : "AubreyIRL"
+- Desc : "Short update video"
+- vfile : "Week7_2.webm"
+- tfile : "week7.png"
+- change : (good = 15, bad = 15)
+;
+
+(7, main) "Taking a break"
+- User : "AubreyIRL"
+- Desc : "Short update video"
+- vfile : "Week7_3.webm"
+- tfile : "week7.png"
+- change : (good = 0, bad = 30)
+;
+
+(8, good) "My Stalker Get's Arrested"
+- User : "AubreyIRL"
+- Desc : "You guys may have heard about the stalker issue that I've been dealing with. This is the resolution!"
+- vfile : "Week8_GoodEnd.webm"
+- tfile : "Week8_GoodEnd.png"
+- change : (good = 0)
+;
+
+(8, bad) "Channel Update"
+- User : "AubreyIRL"
+- Desc : ""
+- vfile : "Week8_BadEnd.webm"
+- tfile : "Week8_BadEnd.png"
+- change : (good = 0)

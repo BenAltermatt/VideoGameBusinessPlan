@@ -1,3 +1,0 @@
-week, sl_name, username, to_player : message text;
-
-2, main, username, true: this is a single message;
