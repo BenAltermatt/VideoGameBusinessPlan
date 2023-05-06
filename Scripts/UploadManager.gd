@@ -36,7 +36,7 @@ func _uploadClicked():
 	if not GameManager.uploaded:
 		GameManager.update_prog(_selectedVideo.changes)
 		GameManager.uploaded = true
-	else:
+	elif GameManager.cur_sl != GameManager.END:
 		$PopupDialog.popup()
 		
 
