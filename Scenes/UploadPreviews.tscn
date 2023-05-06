@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://GameTextureAssets/youtubetopbar.png" type="Texture" id=2]
-[ext_resource path="res://Scripts/PausePlay.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/VideoPlayer.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/VideoSmall.tscn" type="PackedScene" id=5]
 [ext_resource path="res://GameTextureAssets/youtubecolor.png" type="Texture" id=6]
@@ -121,7 +120,6 @@ anchor_top = 0.07
 anchor_right = 0.7
 anchor_bottom = 0.75
 expand_icon = true
-script = ExtResource( 3 )
 
 [node name="Title" type="RichTextLabel" parent="."]
 anchor_left = 0.02

@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Background.png" type="Texture" id=1]
+[ext_resource path="res://GameTextureAssets/Background.png" type="Texture" id=1]
 [ext_resource path="res://GameTextureAssets/youtubetopbar.png" type="Texture" id=2]
 [ext_resource path="res://GameTextureAssets/youtubewatch.png" type="Texture" id=3]
 [ext_resource path="res://ButtonPNGs/HomeMenuButton.png" type="Texture" id=4]
@@ -9,7 +9,7 @@
 [ext_resource path="res://ButtonPNGs/SubsMenuButton.png" type="Texture" id=7]
 [ext_resource path="res://ButtonPNGs/SideMenu.png" type="Texture" id=8]
 [ext_resource path="res://ButtonPNGs/ExploreMenu.png" type="Texture" id=9]
-[ext_resource path="res://Scenes/HomePage.gd" type="Script" id=10]
+[ext_resource path="res://Scripts/HomePage.gd" type="Script" id=10]
 [ext_resource path="res://Scenes/VideoMedium.tscn" type="PackedScene" id=22]
 
 [sub_resource type="StreamTexture" id=1]
@@ -228,6 +228,24 @@ margin_left = -0.0480001
 margin_top = -32.8
 margin_right = 0.207993
 margin_bottom = -33.0001
+
+[node name="PopupDialog" type="PopupDialog" parent="."]
+visible = true
+anchor_left = 0.388
+anchor_top = 0.4
+anchor_right = 0.542
+anchor_bottom = 0.464
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PopupDialog"]
+anchor_right = 0.8
+anchor_bottom = 1.0
+margin_top = 8.0
+margin_right = 20.0
+bbcode_enabled = true
+bbcode_text = "[center]I think I should probably focus on responding comments or uploading now.[/center]"
+text = "I think I should probably focus on responding comments or uploading now."
 
 [connection signal="pressed" from="Button1" to="." method="_on_Button1_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]

@@ -1,3 +1,0 @@
-7, main : good, bad, neutral;
-
-time_frame, story_line : new_sl_1, new_sl_2, new_sl_3, ...;

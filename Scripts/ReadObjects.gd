@@ -1,14 +1,13 @@
-tool
 extends EditorScript
 
 # it should be noted that these files cannot have semicolons or newlines within content of comments
-const COMMENT_TEXT_PATH = "res://Scripts/Comments.txt"
+const COMMENT_TEXT_PATH = "res://StoryTexts/Comments.txt"
 const COMMENT_OBJECT_PATH = "res://Scripts/Comment.gd"
-const VIDEO_TEXT_PATH = "res://Scripts/Videos.txt"
+const VIDEO_TEXT_PATH = "res://StoryTexts/Videos.txt"
 const VIDEO_OBJECT_PATH = "res://Scripts/Video.gd"
-const EVENT_TEXT_PATH = "res://Scripts/StoryEvents.txt"
+const EVENT_TEXT_PATH = "res://StoryTexts/StoryEvents.txt"
 const EVENT_OBJECT_PATH = "res://Scripts/StoryEvent.gd"
-const MESSAGE_TEXT_PATH = "res://Scripts/Messages.txt"
+const MESSAGE_TEXT_PATH = "res://StoryTexts/Messages.txt"
 const MESSAGE_OBJECT_PATH = "res://Scripts/Message.gd"
 
 # This is in run rn, but we'll make it a method we can just
@@ -79,10 +78,4 @@ static func read_in_messages():
 				messages[message.sl] = [message]
 				
 	return messages
-	
-func _run():
-	var messages = read_in_messages()
-	for key in messages:
-		for ev in messages[key]:
-			ev.print_message()
 

@@ -1,9 +1,5 @@
 extends Node
 
-
-# Declare member frdrrrrrvariables here. Examples:
-# var a = 2
-# var b = "text"
 const COMMENT_OBJECT_PATH = "res://Scripts/Comment.gd"
 
 signal reply_intent(index)
@@ -27,4 +23,8 @@ func _ready():
 
 
 func _on_TextureButton_pressed():
-	emit_signal("reply_intent", index)
+	if GameManager.num_responded >= GameManager.MAX_RESPOND:
+		$PopupDialog.popup()
+	else:
+		GameManager.num_responded += 1
+		emit_signal("reply_intent", index)

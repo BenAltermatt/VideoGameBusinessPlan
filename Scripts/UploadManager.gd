@@ -4,7 +4,7 @@ class_name UploadManager
 var YTVideo = load("res://Scripts/Video.gd")
 
 var _allVideos = []
-var _uploadOptionTemplate = load("res://Prefabs/UploadOptionTemplate.tscn")
+var _uploadOptionTemplate = load("res://Scenes/UploadOptionTemplate.tscn")
 var _selectedVideo: YTVideo
 
 # Called when the node enters the scene tree for the first time.
@@ -31,13 +31,12 @@ func _videoSelected(video):
 
 func _uploadClicked():
 	if _selectedVideo == null:
-		print("No video selected.")
 		return
 
 	if not GameManager.uploaded:
 		GameManager.update_prog(_selectedVideo.changes)
 		GameManager.uploaded = true
-	else:
+	elif GameManager.cur_sl != GameManager.END:
 		$PopupDialog.popup()
 		
 
