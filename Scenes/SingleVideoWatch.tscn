@@ -2,13 +2,26 @@
 
 [ext_resource path="res://GameTextureAssets/invisible.png" type="Texture" id=1]
 [ext_resource path="res://GameTextureAssets/youtubetopbar.png" type="Texture" id=2]
-[ext_resource path="res://Scripts/PausePlay.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/VideoPlayer.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/VideoSmall.tscn" type="PackedScene" id=5]
 [ext_resource path="res://GameTextureAssets/youtubecolor.png" type="Texture" id=6]
 [ext_resource path="res://Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Scripts/SingleVideoWatch.gd" type="Script" id=8]
 [ext_resource path="res://GameTextureAssets/rewind.png" type="Texture" id=9]
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends Button
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+#
+#	pass
+"
 
 [sub_resource type="DynamicFont" id=1]
 size = 21
@@ -123,7 +136,7 @@ anchor_top = 0.07
 anchor_right = 0.7
 anchor_bottom = 0.75
 expand_icon = true
-script = ExtResource( 3 )
+script = SubResource( 3 )
 
 [node name="Title" type="RichTextLabel" parent="."]
 anchor_left = 0.02
@@ -165,7 +178,7 @@ anchor_top = 0.014
 anchor_right = 0.117
 anchor_bottom = 0.056
 expand_icon = true
-script = ExtResource( 3 )
+script = SubResource( 3 )
 
 [node name="Rewind" type="TextureButton" parent="."]
 visible = false
