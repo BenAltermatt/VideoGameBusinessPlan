@@ -17,7 +17,6 @@ func init(pas_messages):
 func _ready():
 	container = get_node("Control/ScrollContainer/VBoxContainer")
 	container.add_constant_override("separation", margins + spacing)
-	print(container)
 
 func new_msg(pas_messages):
 	# release all previous messages

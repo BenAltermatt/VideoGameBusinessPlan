@@ -31,7 +31,6 @@ func _videoSelected(video):
 
 func _uploadClicked():
 	if _selectedVideo == null:
-		print("No video selected.")
 		return
 
 	if not GameManager.uploaded:
