@@ -3,6 +3,7 @@ extends Node
 const MAX_WATCH = 3
 const MAX_RESPOND = 2
 const USERNAME = "AubreyIRL"
+const END = "end"
 
 # Threshold values
 var curDay = 0				# current day in the game, cannot go below 0 or exceeed MAX_DAYS
@@ -116,8 +117,22 @@ func _register_event():
 						
 				cur_sl = new_sl
 
+func _end_game():
+	if All_Events.has(cur_sl):
+		for event in All_Events[cur_sl]:
+			if event.time == curDay and event.new_sls[0] == END:
+				cur_sl = END
+				uploaded = true
+				num_watched = -INF
+				num_responded = -INF
+
 # check variables at the start of a new day
 func newDay():
+	# check if game is over
+	if cur_sl == END:
+		get_tree().quit()
+	
+	
 	# change to transition scene
 	get_tree().change_scene("res://Scenes/DayTransition.tscn")
 	
@@ -127,6 +142,7 @@ func newDay():
 	# reset our action counters
 	num_watched = 0
 	num_responded = 0
+	uploaded = false
 	
 	# we have to properly update the storyline
 	_register_event()
@@ -137,8 +153,10 @@ func newDay():
 	_serve_comments()
 	_serve_convos()
 	
-	# reset our tracker for a valid end of day segment
-	uploaded = false
+	# we need to check if this is the last day
+	_end_game()
+	
+	# wait for the day to cycle
 	yield(get_tree().create_timer(1.5), "timeout")
 
 	# get back to the basic website scene
