@@ -4,7 +4,7 @@ class_name UploadManager
 var YTVideo = load("res://Scripts/Video.gd")
 
 var _allVideos = []
-var _uploadOptionTemplate = load("res://Prefabs/UploadOptionTemplate.tscn")
+var _uploadOptionTemplate = load("res://Scenes/UploadOptionTemplate.tscn")
 var _selectedVideo: YTVideo
 
 # Called when the node enters the scene tree for the first time.
