@@ -36,10 +36,10 @@ For reasons covered in the [Technical Difficulties](#technical-difficulties) por
 ## Technical Difficulties
 It should be noted that we ran into a couple major issues when making our game that are related to the Godot Engine and some growing pains.
 
-- ***webm video playing support*** 
+- ***webm video playing support***
 Godot's newest version, Godotv4, no longer supports the use of webm files in the video player in Godot. This is due to its unreliable nature. Godot struggles to play these videos consistently and will sometimes just freeze them at certain points. It seems to occur randomly, and there is no known fix. *.ogv* support has been expanded in the new versions which seems to fix it, but porting our project led to some additional issues which we did not have time to fix.
 
-- ***building and resource access issues*** 
+- ***building and resource access issues***
 Godot's resource management from scripts is currently relatively unreliable when building. Some interaction between compiled components of the project and outside resources has been limited, and, since our game relies on reading from text files as well as video and images, building broke it in its current state. We have looked in to solutions, but there currently aren't too many viable ones for this version.
 
 As of now, it seems like the game making process would have gone significantly more smoothly had we used a more established editor, such as Unity. Perhaps it would have been even *easier* had we simply programmed a website for the game.
